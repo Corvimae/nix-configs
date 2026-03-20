@@ -10,7 +10,7 @@ in {
 
   config = mkIf cfg.enable {
     may.profiles.base.enable = true;
-    may.profiles.desktop.enable = true;
+    may.profiles.gui.enable = true;
 
     home.packages = with pkgs; [];
   };

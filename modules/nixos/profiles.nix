@@ -5,13 +5,13 @@ let
 in {
   options.may.profiles = {
     base.enable = lib.mkEnableOption "Base Profile"
-    desktop.enable = lib.mkEnableOption "Desktop Profile";
+    gui.enable = lib.mkEnableOption "GUI Profile";
   }
 
   config = {
     may.profiles = {
       base.enable = lib.mkDefault true;
-      desktop.enable = lib.mkDefault false;
+      gui.enable = lib.mkDefault false;
     };
   };
-}p
+}

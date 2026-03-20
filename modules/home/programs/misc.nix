@@ -17,7 +17,7 @@ in {
   ];
 
   config = {
-    environment.systemPackages = builtins.foldr(
+    packages = lib.lists.foldr(
       # Merge in system package options if enabled
       (item: acc: acc ++ (lib.optionals cfg[item] [pkgs[item]]))
     ) optionalPrograms;

@@ -7,8 +7,7 @@
       home-manager.sharedModules = [
         inputs.plasma-manager.homeModules.plasma-manager
       ];
-      # home-manager.users.may = import ./homes/may.nix;
-      home-manager.extraSpecialArgs = { inherit inputs pkgs; }; 
+      # home-manager.extraSpecialArgs = { inherit inputs; }; 
     };
   in {
     shared = {

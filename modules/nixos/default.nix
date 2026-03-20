@@ -8,6 +8,7 @@ _: {
 
     otherPrograms = import ./programs/other;
 
+    # Homes
     home-may = import ./homes/may;
   };
 }

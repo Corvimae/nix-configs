@@ -1,4 +1,4 @@
-{ lib, config, inputs, ... }:
+{ self, lib, config, inputs, ... }:
 
 let
   cfg = config.may.programs.plasma;
@@ -41,5 +41,5 @@ in {
       };
       spectacle.shortcuts.captureRectangularRegion = "Alt+Ctrl+$";
     };
-  }
+  };
 }

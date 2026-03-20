@@ -1,4 +1,4 @@
-{ pkgs, configs, ...}:
+{ lib, configs, ...}:
 
 {
   networking.hostName = "magnezone";

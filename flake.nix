@@ -2,7 +2,7 @@
   description = "may's cool nixos config";
 
   nixConfig = {
-    experimental-features = "nix-commands flakes";
+    experimental-features = "nix-command flakes";
   };
 
   inputs = {
@@ -42,7 +42,6 @@
       imports = [
         inputs.easy-hosts.flakeModule
         inputs.home-manager.flakeModules.home-manager
-        ./lib
         ./modules/nixos
         ./modules/home
         ./overlays
@@ -54,6 +53,7 @@
           inherit system;
           overlays = [
             inputs.firefox-addons.overlays.default
+            inputs.self.overlays.lib
           ];
           config.allowUnfree = true;
         };
