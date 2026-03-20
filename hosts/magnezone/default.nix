@@ -6,6 +6,8 @@
     ./hardware-configuration.nix
   ];
 
+  networking.hostName = "magnezone";
+
   may = {
     profiles.gui.enable = true;
 
