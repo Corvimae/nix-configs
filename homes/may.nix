@@ -10,6 +10,7 @@ in {
       "firefox"
       "git"
       "zsh"
+      "plasma"
     ];
   in (map(name: ./${username}/programs/${name}) enabledPrograms) ++ [
     # add more stuff here later
@@ -26,6 +27,12 @@ in {
       vesktop
       ghostty
       slack
+      thunderbird
+      (catppuccin-kde.override {
+        flavour = ["latte"];
+        accents = ["lavender"];
+        winDecStyles = ["classic"];
+      })
     ];
 
     file = let
@@ -70,14 +77,6 @@ in {
   };
 
   programs.home-manager.enable = true;
-
-  programs.plasma = {
-    enable = true;
-    # shortcuts = {
-    #   kwin = {};
-    # };
-    spectacle.shortcuts.captureRectangularRegion = "Alt+Ctrl+$";
-  };
 
   programs.ghostty = {
     enable = true;

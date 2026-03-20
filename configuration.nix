@@ -18,6 +18,11 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  environment.sessionVariables = {
+    # maybe unnecessary. possibly fixes global menu compat.
+    # GDK_BACKEND = "x11";
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
