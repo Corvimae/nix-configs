@@ -1,9 +1,17 @@
 {
   description = "may's cool nixos config";
 
+  nixConfig = {
+    experimental-features = "nix-commands flakes";
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    easy-hosts.url = "github:tgirlcloud/easy-hosts";
+    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,47 +31,39 @@
     self,
     nixpkgs, 
     home-manager,
+    flake-parts,
     ...
-  }@inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [
-        inputs.firefox-addons.overlays.default
+  }@inputs: 
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
       ];
-      config.allowUnfree = true;
-    };
-  in {
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
-    overlays = import ./overlays { inherit inputs; };
-     
-    nixosConfigurations.magnezone = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
-        inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-        inputs.home-manager.nixosModules.default
-        {
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.sharedModules = [
-            inputs.plasma-manager.homeModules.plasma-manager
-          ];
-          home-manager.users.may = import ./homes/may.nix;
-          home-manager.extraSpecialArgs = { inherit inputs pkgs; }; 
-        }
-      ];
-    };
 
-    # homeConfigurations = {
-    #   "may@magnezone" = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     extraSpecialArgs = { inherit inputs; };
-    #     modules = [
-    #       ./homes/may.nix
-    #     ];
-    #   };
+      imports = [
+        inputs.easy-hosts.flakeModule
+        inputs.home-manager.flakeModules.home-manager
+        ./lib
+        ./modules/nixos
+        ./modules/home
+        ./overlays
+        ./hosts
+      ];
+
+      perSystem = { system, ... }: {
+        _module.args.pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.firefox-addons.overlays.default
+          ];
+          config.allowUnfree = true;
+        };
+      };
+    };  
+    # nixosConfigurations.magnezone = nixpkgs.lib.nixosSystem {
+    #   specialArgs = { inherit inputs; };
+    #   modules = [
+    #     ./configuration.nix
+    #     inputs.home-manager.nixosModules.default
+    #   ];
     # };
-  };
 }
