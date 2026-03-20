@@ -18,6 +18,7 @@ let
           "applications:vesktop.desktop"
           "applications:slack.desktop"
           "applications:code.desktop"
+          "applications:steam.desktop"
           "applications:com.mitchellh.ghostty.desktop"
         ];
         appearance = {

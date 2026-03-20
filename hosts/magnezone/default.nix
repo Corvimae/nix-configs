@@ -9,7 +9,10 @@
   networking.hostName = "magnezone";
 
   may = {
-    profiles.gui.enable = true;
+    profiles = {
+      gui.enable = true;
+      desktop.enable = true;
+    };
 
     programs = {
       git.enable = true;

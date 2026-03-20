@@ -4,6 +4,8 @@ let
   cfg = nixosConfig.may.programs.git;
 in {
   config = lib.mkIf cfg.enable {
+    home.packages = [pkgs.git];
+
     programs.git = {
       inherit (cfg) enable;
       settings = {
