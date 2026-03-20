@@ -25,7 +25,7 @@ let
           fill = true;
           iconSpacing = "medium";
         };
-        behavior.grouping.clickAction = "showPresentWindowsEffect";
+        behavior.grouping.clickAction = "cycle"; # equivalent to groupedTaskAction
       };
     };
 

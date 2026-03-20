@@ -11,6 +11,7 @@ in {
       "git"
       "zsh"
       "plasma"
+      "vscode"
     ];
   in (map(name: ./${username}/programs/${name}) enabledPrograms) ++ [
     # add more stuff here later

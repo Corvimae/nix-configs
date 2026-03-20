@@ -8,7 +8,10 @@
   programs.plasma = {
     enable = true;
     workspace = {
-      lookAndFeel = "Catppuccin-Latte-Lavender";
+      windowDecorations = {
+        theme = "Catppuccin-Latte-Lavender";
+        library = "org.kde.kwin.aurorae.v2";
+      };
       splashScreen.theme = "org.kde.breeze.desktop";
       # wallpaper = "";
     };

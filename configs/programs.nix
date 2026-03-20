@@ -18,11 +18,4 @@
     histSize = 10000;
     syntaxHighlighting.enable = true;
   };
-
-  programs.vscode = {
-    enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
-    ];
-  };
 }
