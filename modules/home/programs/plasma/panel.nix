@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ config, nixosConfig, lib, ... }:
 
 let
+  cfg = nixosConfig.may.profiles.gui;
+
   widgets = {
     battery = {
       battery = {
@@ -85,50 +87,52 @@ let
     };
   };
 in {
-  #TODO remove this after the bug fixed
-  # https://github.com/nix-community/plasma-manager/issues/577
-  programs.plasma.startup.desktopScript."panels".preCommands = lib.mkForce ''
-    sleep 3
-    [ -f ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc ] && rm ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc        
-  '';
+  config = lib.mkIf cfg.enable {
+    # TODO remove this after the bug gets fixed
+    # https://github.com/nix-community/plasma-manager/issues/577
+    programs.plasma.startup.desktopScript."panels".preCommands = lib.mkForce ''
+      sleep 3
+      [ -f ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc ] && rm ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc        
+    '';
 
-  programs.plasma.panels = with widgets; [
-    {
-      location = "bottom";
-      height = 44;
-      floating = true;
-      lengthMode = "fit";
-      widgets = with widgets; [
-        # {
-        #   plasmaPanelColorizer = {
-        #     general.enable = true;
-        #     panelBackground.customBackground = {
-        #       enable = true;
-        #       colorSource = "custom";
-        #       customColor = "#000000";
-        #       opacity = 0;
-        #     };
-        #   };
-        # }
-        kickoff
-        apps
-      ];
-    }
-    {
-      location = "top";
-      height = 24;
-      widgets = with widgets; [
-        (fixedSpacer 10)
-        globalMenu
-        spacer
-        systemTray
-        clipboard
-        wifi
-        battery
-        (fixedSpacer 10)
-        clock
-        (fixedSpacer 10)
-      ];
-    }
-  ];
+    programs.plasma.panels = with widgets; [
+      {
+        location = "bottom";
+        height = 44;
+        floating = true;
+        lengthMode = "fit";
+        widgets = with widgets; [
+          # {
+          #   plasmaPanelColorizer = {
+          #     general.enable = true;
+          #     panelBackground.customBackground = {
+          #       enable = true;
+          #       colorSource = "custom";
+          #       customColor = "#000000";
+          #       opacity = 0;
+          #     };
+          #   };
+          # }
+          kickoff
+          apps
+        ];
+      }
+      {
+        location = "top";
+        height = 24;
+        widgets = with widgets; [
+          (fixedSpacer 10)
+          globalMenu
+          spacer
+          systemTray
+          clipboard
+          wifi
+          battery
+          (fixedSpacer 10)
+          clock
+          (fixedSpacer 10)
+        ];
+      }
+    ];
+  };
 }

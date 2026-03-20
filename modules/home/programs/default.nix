@@ -6,5 +6,6 @@
     ./vscode.nix
     ./git.nix
     ./misc.nix
+    ./zsh.nix
   ];
 }

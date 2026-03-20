@@ -1,7 +1,9 @@
 { lib, configs, ...}:
 
 {
+  # todo: set this by host
   networking.hostName = "magnezone";
+  
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

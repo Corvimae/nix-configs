@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 {
-  users.users {
+  users.users = {
     may = lib.mkDefault {
       isNormalUser = true;
       description = lib.mkDefault "May";
@@ -10,6 +10,6 @@
         "wheel"
       ];
       shell = pkgs.zsh;
-    }
-  }
+    };
+  };
 }

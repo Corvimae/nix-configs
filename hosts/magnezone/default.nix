@@ -6,21 +6,16 @@
     ./hardware-configuration.nix
   ];
 
-  # may = {
-  #   profiles.desktop.enable = true;
-  #   programs = {
-  #     firefox.enable = true;
-  #     vscode.enable = true;
-  #     plasma.enable = true;
-  #     git.enable = true;
-  #     ghostty.enable = true;
-  #     vesktop.enable = true;
-  #     slack.enable = true;
-  #     thunderbird.enable = true;
-  #   };
+  may = {
+    profiles.gui.enable = true;
 
-  #   services = {
-  #     sshAgent.enable = true;
-  #   };
-  # };
+    programs = {
+      git.enable = true;
+      vesktop.enable = true;
+    };
+
+    services = {
+      sshAgent.enable = true;
+    };
+  };
 }

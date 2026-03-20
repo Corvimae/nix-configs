@@ -33,7 +33,7 @@
     home-manager,
     flake-parts,
     ...
-  }@inputs: 
+  }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -45,6 +45,7 @@
         ./modules/nixos
         ./modules/home
         ./overlays
+        ./utils
         ./hosts
       ];
 
@@ -53,17 +54,9 @@
           inherit system;
           overlays = [
             inputs.firefox-addons.overlays.default
-            inputs.self.overlays.lib
           ];
           config.allowUnfree = true;
         };
       };
-    };  
-    # nixosConfigurations.magnezone = nixpkgs.lib.nixosSystem {
-    #   specialArgs = { inherit inputs; };
-    #   modules = [
-    #     ./configuration.nix
-    #     inputs.home-manager.nixosModules.default
-    #   ];
-    # };
+    };
 }

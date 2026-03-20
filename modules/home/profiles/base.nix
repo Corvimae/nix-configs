@@ -1,15 +1,18 @@
-{ config, lib, ... }:
+{ nixosConfig, lib, ... }:
 
 let
-  cfg = config.may.profiles.base;
+  cfg = nixosConfig.may.profiles.base;
 in
-{
-  options.may.profiles.base.enable = lib.mkEnableOption "Base Home Profile";
-  
+{  
   config = lib.mkIf cfg.enable {
-    home.stateVersion = "26.05";
-    home.language = {
-      base = "en_US.utf8";
+    home = {
+      stateVersion = "26.05";
+      language = {
+        base = "en_US.utf8";
+      };
+      preferXdgDirectories = true;
     };
+
+    systemd.user.startServices = "sd-switch";
   };
 }

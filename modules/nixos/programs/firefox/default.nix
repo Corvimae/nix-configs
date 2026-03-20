@@ -10,12 +10,14 @@ in {
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;
+
       wrapperConfig.cfg = {
         pipewireSupport = true;
         ffmpegSupport = true;
       };
+
       policies = import ./policies.nix;
-      preferences = import ./settings.nix;
+      preferences = import ./preferences.nix;
     };
   };
 }

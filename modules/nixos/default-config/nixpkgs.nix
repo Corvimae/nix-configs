@@ -2,9 +2,7 @@
 
 {
   nixpkgs = {
-    overlays = [
-      inputs.self.overlays.lib
-    ];
+    overlays = [];
     config.allowUnfree = true;
   };
 }

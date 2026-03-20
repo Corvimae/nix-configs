@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ...}:
+{ inputs, nixosConfig, lib, pkgs, ...}:
 
 let
-  cfg = config.may.programs.git;
+  cfg = nixosConfig.may.programs.git;
 in {
   config = lib.mkIf cfg.enable {
     programs.git = {

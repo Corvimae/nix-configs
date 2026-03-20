@@ -1,5 +1,3 @@
 {
-  flake.overlays = {
-    lib = import ./lib.nix;
-  };
+  flake.overlays = {};
 }

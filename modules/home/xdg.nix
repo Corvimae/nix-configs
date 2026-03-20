@@ -1,15 +1,15 @@
-{ config, lib, pkgs, ... }:
+{ nixosConfig, config, lib, pkgs, ... }:
 
 let 
   homeDirectory = config.home.homeDirectory;
-  profiles = config.may.profiles;
+  profiles = nixosConfig.may.profiles;
 in {
   xdg = {
     enable = true;
     configHome = lib.mkForce "${homeDirectory}/.config";
     dataHome = lib.mkForce "${homeDirectory}/.local/share";
     
-    portal = {
+    portal = lib.mkIf profiles.gui.enable {
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = [
@@ -22,20 +22,21 @@ in {
       };
     };
 
-    mimeApps = lib.mkIf profiles.desktop.enable {
-      inherit (profiles.desktop) enable;
+    # todo: this is causing home-manager service to not restart.
+    # mimeApps = lib.mkIf profiles.gui.enable {
+    #   inherit (profiles.gui) enable;
 
-      associations.added = {
-        "application/pdf" = ["firefox.desktop"];
-        "application/xml" = ["firefox.desktop"];
-        "image/webp" = ["gwenview.desktop"];
-      };
+    #   associations.added = {
+    #     "application/pdf" = ["firefox.desktop"];
+    #     "application/xml" = ["firefox.desktop"];
+    #     "image/webp" = ["gwenview.desktop"];
+    #   };
 
-      defaultApplications = {
-        "application/pdf" = ["firefox.desktop"];
-        "application/xml" = ["firefox.desktop"];
-        "image/webp" = ["gwenview.desktop"];
-      };
-    };
+    #   defaultApplications = {
+    #     "application/pdf" = ["firefox.desktop"];
+    #     "application/xml" = ["firefox.desktop"];
+    #     "image/webp" = ["gwenview.desktop"];
+    #   };
+    # };
   };
 }

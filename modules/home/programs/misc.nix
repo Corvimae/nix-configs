@@ -1,25 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ inputs, nixosConfig, lib, pkgs, ... }:
 
 let
-  cfg = config.may.programs;
-  optionalPrograms = [
-    "vesktop"
-    "slack"
-    "thunderbird"
-  ];
+  cfg = nixosConfig.may.programs;
 in {
-  options.may.programs = lib.pipe optionalPrograms [
-    (builtins.map(name: {
-      inherit name;
-      value = lib.mkProgramOption name; # todo: camelcase?
-    }))
-    (builtins.listToAttrs)
-  ];
-
   config = {
-    packages = lib.lists.foldr(
+    home.packages = lib.lists.foldr(
       # Merge in system package options if enabled
-      (item: acc: acc ++ (lib.optionals cfg[item] [pkgs[item]]))
-    ) optionalPrograms;
+      (item: acc: acc ++ (lib.optionals cfg.${item}.enable [pkgs.${item}]))
+    ) [] inputs.self.optionals.programs;
   };
 }
