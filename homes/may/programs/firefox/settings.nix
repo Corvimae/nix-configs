@@ -1,0 +1,3 @@
+{
+  "browser.ml.enable" = false;
+}
