@@ -4,11 +4,15 @@ let
   username = "may";
   homeDirectory = "/home/${username}";
   configDirectory = config.xdg.configHome;
-  zshCustomDirectory = "${homeDirectory}/.oh-my-zsh/custom";
 in {
-  imports = [
-    ./${username}/programs/firefox
-    ./${username}/programs/git
+  imports = let
+    enabledPrograms = [
+      "firefox"
+      "git"
+      "zsh"
+    ];
+  in (map(name: ./${username}/programs/${name}) enabledPrograms) ++ [
+    # add more stuff here later
   ];
 
   home = {
@@ -44,12 +48,7 @@ in {
         (builtins.listToAttrs)
       ];
     in {
-      "${zshCustomDirectory}/themes/bullet-train.zsh-theme" = {
-        source = pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/caiogondim/bullet-train.zsh/refs/heads/master/bullet-train.zsh-theme";
-          hash = "sha256-R77AY/CPUI+19UbyV7o8Us5J+uQFfebzJWy5JnXzhNQ=";
-        };
-      };
+      # add more files here
     } // configFiles;
   };
 
@@ -70,35 +69,7 @@ in {
     };
   };
 
-  programs.ssh.startAgent = true;
-
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    dotDir = "${config.xdg.configHome}/zsh";
-    shellAliases = {
-      renix = "sudo nixos-rebuild switch";
-      nix-repl = "nix repl --extra-experimental-features 'flakes' nixpkgs";
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "bullet-train";
-      custom = zshCustomDirectory;
-      extraConfig = ''
-        BULLETTRAIN_PROMPT_ORDER=(
-          time
-          context
-          dir
-          git
-        )
-
-        BULLETTRAIN_CONTEXT_DEFAULT_USER=${username}
-      '';
-    };
-  };
 
   programs.plasma = {
     enable = true;
@@ -113,7 +84,6 @@ in {
     systemd.enable = true;
   };
 
-
-
+  services.ssh-agent.enable = true;
   systemd.user.startServices = "sd-switch";
 }
