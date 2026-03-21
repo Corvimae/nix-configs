@@ -55,7 +55,6 @@
         ./modules/darwin
         ./modules/home
         ./overlays
-        ./utils
         ./hosts
       ];
 
@@ -64,6 +63,7 @@
           inherit system;
           overlays = [
             inputs.firefox-addons.overlays.default
+            inputs.self.overlays.mayUtils
           ];
           config.allowUnfree = true;
         };

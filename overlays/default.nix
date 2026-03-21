@@ -1,3 +1,5 @@
 {
-  flake.overlays = {};
+  flake.overlays = {
+    mayUtils = import ./mayUtils.nix;
+  };
 }

@@ -1,9 +1,9 @@
-{ self, ... }: 
+{ self, pkgs, ... }: 
 
 {
   # Generate the options here so that they can all
   # be referenced within home manager. This has
   # to happen at the system level as well becuase
   # home manager configs are a nightmare.
-  options.may = self.lib.defineOptions self.optionals;
+  options.may = pkgs.mayUtils.defineOptions self.optionals;
 }

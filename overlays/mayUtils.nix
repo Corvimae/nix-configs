@@ -1,8 +1,7 @@
-{ config, lib, ... }:
-
-{
-  # i love the global variable scope its my bestie
-  flake.lib = rec {
+final: prev: {
+  mayUtils = let
+    lib = prev.lib;
+  in rec {
     mkGroupedOption = group: name: {
       enable = lib.mkEnableOption "${group} — ${name}";
     };
