@@ -15,6 +15,7 @@
     "slack"
     "yt-dlp"
     "doctl"
+    "asdf-vm"
   ];
 
   services = [

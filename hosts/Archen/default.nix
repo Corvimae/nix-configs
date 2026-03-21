@@ -18,9 +18,11 @@
       darwin.enable = true;
     };
 
+    # i hate home-manager
     programs = {
       git.enable = true;
       doctl.enable = true;
+      asdf-vm.enable = true;
       yt-dlp.enable = true;
     };
   };

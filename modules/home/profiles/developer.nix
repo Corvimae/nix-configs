@@ -8,6 +8,7 @@ in {
     may = {
       programs = {
         git.enable = mkDefault true;
+        asdf-vm.enable = mkDefault true;
       };
     };
   };

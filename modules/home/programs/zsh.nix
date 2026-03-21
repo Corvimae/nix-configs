@@ -18,7 +18,12 @@ in {
     dotDir = lib.mkDefault "${config.xdg.configHome}/zsh";
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [
+        "git"
+        "doctl"
+        "kubectl"
+        "asdf"
+      ];
       theme = "bullet-train";
       custom = zshCustomDirectory;
       extraConfig = ''
