@@ -14,6 +14,7 @@
   may = {
     profiles = {
       base.enable = true;
+      developer.enable = true;
       darwin.enable = true;
     };
 

@@ -7,7 +7,7 @@ _: {
     # Programs
     firefox = import ./programs/firefox;
 
-    nixosPrograms = import ./programs/nixos-programs;
+    nixosPrograms = import ./programs/nixos-programs.nix;
 
     # Homes
     home-may = import ./homes/may;

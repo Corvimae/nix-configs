@@ -2,6 +2,7 @@
 
 {
   flake.homeModules = {
+    options = import ./options.nix;
     programs = import ./programs;
     services = import ./services;
     profiles = import ./profiles;

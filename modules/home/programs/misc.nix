@@ -10,6 +10,6 @@ in {
     home.packages = lib.lists.foldr(
       # Merge in home package options if enabled
       (item: acc: acc ++ (lib.optionals cfg.${item}.enable [pkgs.${item}]))
-    ) [] inputs.self.optionals.programs.unmanaged;
+    ) [] inputs.self.optionals.programs;
   };
 }

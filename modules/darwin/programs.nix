@@ -7,6 +7,6 @@ in {
     environment.systemPackages = lib.lists.foldr(
       # Merge in system package options if enabled
       (item: acc: acc ++ (lib.optionals cfg.${item}.enable [pkgs.${item}]))
-    ) [] inputs.self.optionals.programs.unmanaged;
+    ) [] inputs.self.optionals.programs;
   };
 }

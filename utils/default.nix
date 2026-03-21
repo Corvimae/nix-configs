@@ -18,29 +18,8 @@
     ];
 
     defineOptions = optionals: {
-      profiles = {
-        base = {
-          enable = lib.mkEnableOption "Base Profile";
-        };
-
-        gui = {
-          enable = lib.mkEnableOption "GUI Profile";
-        };
-
-        desktop = {
-          enable = lib.mkEnableOption "Desktop Profile";
-        };
-        
-        darwin = {
-          enable = lib.mkEnableOption "Darwin Profile";
-        };
-      };
-
-      programs = mkOptionSet (
-        optionals.programs.managed ++ 
-        optionals.programs.unmanaged
-      );
-
+      profiles = mkOptionSet optionals.profiles;
+      programs = mkOptionSet optionals.programs;
       services = mkOptionSet optionals.services;
     };
   };

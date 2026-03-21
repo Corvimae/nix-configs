@@ -14,13 +14,14 @@
           inputs.self.sharedModules.options
           inputs.self.sharedModules.programs
           inputs.self.sharedModules.services
-          inputs.self.sharedModules.profiles
         ];
 
         nixosModules = lib.optionals (class == "nixos") [
           inputs.home-manager.nixosModules.home-manager
           inputs.self.nixosModules.defaultConfig
           inputs.self.nixosModules.defaultUsers
+          inputs.self.nixosModules.services
+          inputs.self.nixosModules.nixosPrograms
           inputs.self.nixosModules.firefox
           inputs.self.nixosModules.home-may
         ];
@@ -44,6 +45,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.sharedModules = [
+              # inputs.self.homeModules.options
               inputs.plasma-manager.homeModules.plasma-manager
               inputs.self.homeModules.plasma
             ];

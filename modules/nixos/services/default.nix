@@ -3,6 +3,6 @@
 {
   imports = [
     ./desktop-services.nix
-    ./nixos-services.nix
+    # ./nixos-services.nix
   ];
 }

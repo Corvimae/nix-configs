@@ -12,11 +12,13 @@
     profiles = {
       gui.enable = true;
       desktop.enable = true;
+      developer.enable = true;
     };
 
     programs = {
       git.enable = true;
       vesktop.enable = true;
+      vscode.enable = true;
     };
 
     services = {

@@ -6,10 +6,13 @@ let
 in {
   config = lib.mkIf cfg.enable {
     may = {
+      profiles.gui.enable = true;
+
       programs = {
         firefox.enable = mkDefault true;
         ghostty.enable = mkDefault true;
         vscode.enable = mkDefault true;
+        vesktop.enable = mkDefault true;
         slack.enable = mkDefault true;
         thunderbird.enable = mkDefault true;
         steam.enable = mkDefault true;
