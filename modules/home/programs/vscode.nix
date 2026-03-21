@@ -13,7 +13,7 @@ in {
         ms-vscode.remote-explorer
 
         # highlighting
-        bbenoist.nix
+        jnoortheen.nix-ide
         styled-components.vscode-styled-components
         redhat.vscode-yaml
 
