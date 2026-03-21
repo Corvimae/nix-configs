@@ -1,7 +1,7 @@
-{ lib, pkgs, config, nixosConfig, inputs, ... }:
+{ lib, pkgs, config, inputs, ... }@args:
 
 let
-  cfg = nixosConfig.may.profiles.gui;
+  cfg = (inputs.self.lib.withConfig args).may.profiles.gui;
 in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

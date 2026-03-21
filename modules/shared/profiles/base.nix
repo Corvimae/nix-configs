@@ -7,4 +7,8 @@ in
   options.may.profiles.base = {
     enable = lib.mkEnableOption "Base Profile";
   };
+
+  options.may.profiles.darwin = {
+    enable = lib.mkEnableOption "Darwin Profile";
+  };
 }

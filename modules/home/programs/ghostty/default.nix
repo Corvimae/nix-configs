@@ -1,7 +1,7 @@
-{ nixosConfig, inputs, lib, config, ... }:
+{ inputs, lib, config, ... }@args:
 
 let
-  cfg = nixosConfig.may.programs.ghostty;
+  cfg = (inputs.self.lib.withConfig args).may.programs.ghostty;
 in {
   config.programs.ghostty = lib.mkIf cfg.enable {
     inherit (cfg) enable;

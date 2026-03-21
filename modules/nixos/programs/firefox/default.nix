@@ -3,10 +3,6 @@
 let
   cfg = config.may.programs.firefox;
 in {
-  options.may.programs.firefox = {
-    enable = lib.mkEnableOption "Programs — Firefox";    
-  };
-
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;

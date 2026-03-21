@@ -15,11 +15,7 @@ in {
   programs.zsh = {
     enable = true;
 
-    dotDir = "${config.xdg.configHome}/zsh";
-    shellAliases = {
-      renix = "sudo nixos-rebuild switch";
-      nix-repl = "nix repl --extra-experimental-features 'flakes' nixpkgs";
-    };
+    dotDir = lib.mkDefault "${config.xdg.configHome}/zsh";
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];

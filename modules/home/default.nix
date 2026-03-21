@@ -5,7 +5,8 @@
     programs = import ./programs;
     services = import ./services;
     profiles = import ./profiles;
+    plasma = import ./plasma;
     xdg = import ./xdg.nix;
-    allHomeModules = flake-parts-lib.importApply ./all-home-modules.nix { inherit inputs; };
+    sharedHomeModules = flake-parts-lib.importApply ./shared-home-modules.nix { inherit inputs; };
   };
 }

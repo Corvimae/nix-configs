@@ -1,7 +1,7 @@
-{ inputs, lib, pkgs, nixosConfig, ... }:
+{ inputs, lib, pkgs, ... }@args:
 
 let
-  cfg = nixosConfig.may.programs.vscode;
+  cfg = (inputs.self.lib.withConfig args).may.programs.vscode;
 in {
   config = lib.mkIf cfg.enable {
     programs.vscode = {

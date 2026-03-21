@@ -1,7 +1,7 @@
-{ config, nixosConfig, lib, ... }:
+{ config, inputs, lib, ... }@args:
 
 let
-  cfg = nixosConfig.may.profiles.gui;
+  cfg = (inputs.self.lib.withConfig args).may.profiles.gui;
 
   widgets = {
     battery = {

@@ -1,8 +1,8 @@
-{ nixosConfig, config, lib, pkgs, ... }:
+{ config, self, lib, pkgs, ... }@args:
 
 let 
   homeDirectory = config.home.homeDirectory;
-  profiles = nixosConfig.may.profiles;
+  profiles = (self.lib.withConfig args).may.profiles;
 in {
   xdg = {
     enable = true;
