@@ -4,10 +4,6 @@ let
   cfg = config.may.profiles.desktop;
   inherit (lib) mkDefault;
 in {
-  options.may.profiles.desktop = {
-    enable = lib.mkEnableOption "Desktop Profile";
-  };
-
   config = lib.mkIf cfg.enable {
     may = {
       programs = {

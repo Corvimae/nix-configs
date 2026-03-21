@@ -1,7 +1,7 @@
-{ lib, pkgs, config, inputs, ... }@args:
+{ lib, pkgs, config, inputs, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.profiles.gui;
+  cfg = config.may.profiles.gui;
 in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

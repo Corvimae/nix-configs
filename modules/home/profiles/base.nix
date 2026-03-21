@@ -1,7 +1,7 @@
-{ inputs, lib, ... }@args:
+{ inputs, lib, config, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.profiles.base;
+  cfg = config.may.profiles.base;
 in
 {  
   config = lib.mkIf cfg.enable {

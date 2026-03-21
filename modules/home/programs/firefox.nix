@@ -1,7 +1,7 @@
-{ inputs, nixosConfig, lib, pkgs, ... }@args:
+{ inputs, config, lib, pkgs, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.programs.firefox;
+  cfg = config.may.programs.firefox;
 in {
   config = lib.mkIf cfg.enable {
     programs.firefox = {

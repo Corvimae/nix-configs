@@ -1,7 +1,7 @@
-{ inputs, config, lib, ... }@args:
+{ inputs, config, lib, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.profiles.darwin;
+  cfg = config.may.profiles.darwin;
 in
 {  
   config = lib.mkIf cfg.enable {

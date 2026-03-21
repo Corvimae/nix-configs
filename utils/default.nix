@@ -17,11 +17,31 @@
       (builtins.listToAttrs)
     ];
 
-    # this feels fucked up lol
-    withConfig = inputs: if isNixOS inputs
-      then inputs.nixosConfig
-      else inputs.darwinConfig;
+    defineOptions = optionals: {
+      profiles = {
+        base = {
+          enable = lib.mkEnableOption "Base Profile";
+        };
 
-    isNixOS = inputs: inputs._class == "nixos";
+        gui = {
+          enable = lib.mkEnableOption "GUI Profile";
+        };
+
+        desktop = {
+          enable = lib.mkEnableOption "Desktop Profile";
+        };
+        
+        darwin = {
+          enable = lib.mkEnableOption "Darwin Profile";
+        };
+      };
+
+      programs = mkOptionSet (
+        optionals.programs.managed ++ 
+        optionals.programs.unmanaged
+      );
+
+      services = mkOptionSet optionals.services;
+    };
   };
 }

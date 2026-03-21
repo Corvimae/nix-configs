@@ -1,7 +1,7 @@
-{ inputs, lib, config, ... }@args:
+{ inputs, lib, config, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.programs.ghostty;
+  cfg = config.may.programs.ghostty;
 in {
   config.programs.ghostty = lib.mkIf cfg.enable {
     inherit (cfg) enable;

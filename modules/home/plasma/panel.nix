@@ -1,7 +1,7 @@
-{ config, inputs, lib, ... }@args:
+{ config, inputs, lib, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.profiles.gui;
+  cfg = config.may.profiles.gui;
 
   widgets = {
     battery = {

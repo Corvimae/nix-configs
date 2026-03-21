@@ -1,7 +1,7 @@
-{ inputs, lib, pkgs, ...}@args:
+{ inputs, lib, config, pkgs, ...}:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.programs.git;
+  cfg = config.may.programs.git;
 in {
   config = lib.mkIf cfg.enable {
     home.packages = [pkgs.git];

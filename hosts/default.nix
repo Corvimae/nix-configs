@@ -11,6 +11,7 @@
     perClass = class: {
       modules = let
         sharedModules = [
+          inputs.self.sharedModules.options
           inputs.self.sharedModules.programs
           inputs.self.sharedModules.services
           inputs.self.sharedModules.profiles
@@ -39,12 +40,12 @@
         class = "nixos";
         modules = [
           inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-          inputs.self.homeModules.plasma
           homeManagerOpts
           {
             home-manager.useGlobalPkgs = true;
             home-manager.sharedModules = [
               inputs.plasma-manager.homeModules.plasma-manager
+              inputs.self.homeModules.plasma
             ];
           }
         ];

@@ -1,7 +1,7 @@
-{ inputs, lib, pkgs, ... }@args:
+{ inputs, lib, config, pkgs, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.programs.vscode;
+  cfg = config.may.programs.vscode;
 in {
   config = lib.mkIf cfg.enable {
     programs.vscode = {

@@ -2,7 +2,7 @@
 
 let 
   homeDirectory = config.home.homeDirectory;
-  profiles = (self.lib.withConfig args).may.profiles;
+  profiles = config.may.profiles;
 in {
   xdg = {
     enable = true;
