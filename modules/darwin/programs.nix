@@ -1,7 +1,7 @@
-{ inputs, lib, pkgs, ... }@args:
+{ inputs, lib, config, pkgs, ... }:
 
 let
-  cfg = (inputs.self.lib.withConfig args).may.programs;
+  cfg = config.may.programs;
 in {
   config = rec {
     environment.systemPackages = lib.lists.foldr(

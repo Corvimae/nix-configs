@@ -27,6 +27,7 @@
         darwinModules = lib.optionals (class == "darwin") [
           inputs.home-manager.darwinModules.home-manager
           inputs.self.darwinModules.defaultConfig
+          inputs.self.darwinModules.programs
           inputs.self.darwinModules.home-may-darwin
         ];
       in sharedModules ++ nixosModules ++ darwinModules;

@@ -1,11 +1,14 @@
-{ self, inputs, lib, pkgs, ... }@args:
+{ inputs, lib, pkgs, ... }@args:
 
 let
   cfg = (inputs.self.lib.withConfig args).may.programs;
 in {
-  config = lib.mkIf self.lib.isNixOS {
+  # darwin requires everything to be installed in systemPackages, so we
+  # reimplement this in modules/darwin/programs.nix and only run this when
+  # building for nixOS
+  config = lib.mkIf (inputs.self.lib.isNixOS args) {
     home.packages = lib.lists.foldr(
-      # Merge in system package options if enabled
+      # Merge in home package options if enabled
       (item: acc: acc ++ (lib.optionals cfg.${item}.enable [pkgs.${item}]))
     ) [] inputs.self.optionals.programs.unmanaged;
 
