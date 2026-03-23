@@ -1,0 +1,53 @@
+# ----------------
+# --  FEATURES  --
+# ----------------
+[features.desktop]
+programs = [
+  "firefox",
+  "ghostty",
+  "vscode",
+  "slack",
+  "thunderbird"
+]
+
+[features.developer]
+programs = ["git"]
+packages = ["asdf-vm"]
+
+[features.gaming]
+programs = [
+  "steam",
+  "vesktop"
+]
+
+# ---------------
+# --   HOSTS   --
+# ---------------
+[hosts.magnezone]
+class = "nixos"
+homeConfig = true
+
+features = [
+  "desktop",
+  "developer",
+  "gaming"
+]
+
+programs = []
+
+services = ["sshAgent"]
+
+[hosts.Archen]
+class = "darwin"
+homeConfig = true
+
+features = [
+  "developer"
+]
+
+packages = [
+  "sshpass",
+  "ffmpeg_7",
+  "yt-dlp",
+  "doctl"
+]

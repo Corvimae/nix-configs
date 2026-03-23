@@ -1,7 +1,7 @@
 { config, inputs, lib, ... }:
 
 let
-  cfg = config.may.profiles.gui;
+  cfg = config.may.features.desktop;
 
   widgets = {
     battery = {

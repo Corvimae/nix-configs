@@ -1,15 +1,22 @@
 { inputs, lib, config, pkgs, ... }:
 
 let
-  cfg = config.may.programs;
+  packages = config.may.packages;
+  developerCfg = config.may.features.developer;
 in {
   config = rec {
-    environment.systemPackages = lib.lists.foldr(
-      # Merge in system package options if enabled
-      (item: acc: acc ++ (lib.optionals cfg.${item}.enable [pkgs.${item}]))
-    ) [] inputs.self.optionals.programs;
+    # environment.systemPackages = lib.lists.foldr(
+    #   # Merge in system package options if enabled
+    #   (item: acc: acc ++ (lib.optionals cfg.${item}.enable [pkgs.${item}]))
+    # ) [] inputs.self.optionals.packages;
 
-    programs.zsh = lib.mkIf config.may.profiles.developer.enable {
+    environment.systemPackages = 
+      packages
+      |> lib.attrsets.filterAttrs (name: value: value)
+      |> builtins.attrNames
+      |> builtins.map(name: pkgs.${name});
+
+    programs.zsh = lib.mkIf developerCfg.enabled {
       enable = true;
       enableCompletion = true;
       enableBashCompletion = true;

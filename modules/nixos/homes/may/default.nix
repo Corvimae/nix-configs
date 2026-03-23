@@ -12,12 +12,12 @@
       }
     ];
 
-    may = {
-      profiles = {
-        desktop.enable = true;
-        developer.enable = true;
-      };
-    };
+    # may = {
+    #   profiles = {
+    #     desktop.enable = true;
+    #     developer.enable = true;
+    #   };
+    # };
     
     programs.zsh.shellAliases = {
       renix = "sudo nixos-rebuild switch";

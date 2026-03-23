@@ -11,19 +11,21 @@
     ffmpeg_7
   ];
 
-  may = {
-    profiles = {
-      base.enable = true;
-      developer.enable = true;
-      darwin.enable = true;
-    };
+  may = pkgs.mayUtils.loadConfig "Archen" ../../config.toml;
+  
+  # may = {
+    # profiles = {
+    #   base.enable = true;
+    #   developer.enable = true;
+    #   darwin.enable = true;
+    # };
 
-    # i hate home-manager
-    programs = {
-      git.enable = true;
-      doctl.enable = true;
-      asdf-vm.enable = true;
-      yt-dlp.enable = true;
-    };
-  };
+    # # i hate home-manager
+    # programs = {
+    #   git.enable = true;
+    #   doctl.enable = true;
+    #   asdf-vm.enable = true;
+    #   yt-dlp.enable = true;
+    # };
+  # };
 }

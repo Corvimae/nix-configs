@@ -2,14 +2,14 @@
 
 let 
   homeDirectory = config.home.homeDirectory;
-  profiles = config.may.profiles;
+  desktopCfg = config.may.features.desktop;
 in {
   xdg = {
     enable = true;
     configHome = lib.mkForce "${homeDirectory}/.config";
     dataHome = lib.mkForce "${homeDirectory}/.local/share";
     
-    portal = lib.mkIf profiles.gui.enable {
+    portal = lib.mkIf desktopCfg.enable {
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = [
@@ -23,8 +23,8 @@ in {
     };
 
     # todo: this is causing home-manager service to not restart.
-    # mimeApps = lib.mkIf profiles.gui.enable {
-    #   inherit (profiles.gui) enable;
+    # mimeApps = lib.mkIf features.gui.enable {
+    #   inherit (features.gui) enable;
 
     #   associations.added = {
     #     "application/pdf" = ["firefox.desktop"];

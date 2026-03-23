@@ -2,7 +2,7 @@
   description = "may's cool nixos config";
 
   nixConfig = {
-    experimental-features = "nix-command flakes";
+    experimental-features = "nix-command flakes pipe-operators";
   };
 
   inputs = {

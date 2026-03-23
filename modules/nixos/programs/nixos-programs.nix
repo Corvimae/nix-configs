@@ -1,20 +1,20 @@
 { self, config, lib, pkgs, ... }:
 
 let
-  cfg = config.may.programs;
+  steamCfg = config.may.programs.steam;
 
   inherit (lib) mkIf;
 in {
   config = {
     programs = {
-      steam = mkIf cfg.steam.enable {
+      steam = mkIf steamCfg.enable {
         enable = true;
         protontricks.enable = true;
         gamescopeSession.enable = true;
       };
     };
 
-    environment.systemPackages = lib.optionals cfg.steam.enable [
+    environment.systemPackages = lib.optionals steamCfg.enable [
       pkgs.protonplus
     ];      
   };

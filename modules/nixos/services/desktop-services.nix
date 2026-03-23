@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.may.profiles.gui;
+  cfg = config.may.features.desktop;
 in {
   config = lib.mkIf cfg.enable {  
     services.xserver.enable = true;
