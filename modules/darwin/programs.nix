@@ -9,7 +9,7 @@ in {
       # Grab all the enabled package options and install them
       # as system packages.
       packages
-      |> lib.attrsets.filterAttrs (name: value: value)
+      |> lib.attrsets.filterAttrs (name: value: value.enable)
       |> builtins.attrNames
       |> builtins.map(name: pkgs.${name});
 

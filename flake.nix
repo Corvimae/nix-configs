@@ -61,6 +61,8 @@
       perSystem = { system, ... }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
+          # If you're adding overlays and they're being used in shared or nix-darwin modules,
+          # you need to add the overlay in modules/darwin/default-config.nix as well.
           overlays = [
             inputs.firefox-addons.overlays.default
             inputs.self.overlays.mayUtils
