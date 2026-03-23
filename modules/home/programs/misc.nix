@@ -8,6 +8,8 @@ in {
   # reimplement this in modules/darwin/programs.nix and only run this when
   # building for nixOS
   config = lib.mkIf isNixOS {
+    # Grab all the enabled package options and install them
+    # as user packages.
     home.packages = 
       packages
       |> lib.attrsets.filterAttrs (name: value: value.enable)

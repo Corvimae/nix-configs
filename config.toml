@@ -1,3 +1,17 @@
+# Features - Groups of programs/packages/services that
+#            can have additional configuration.
+#
+# Packages - Anything that is installed via the package
+#            manager.
+# 
+# Programs - Anything program that requires additional
+#            configuration. You may also need to specify
+#            the package as well, if it is not a NixOS
+#            option.
+#
+# Services - Basically the same as programs, just separated
+#            out for (in)convenience.
+
 # ----------------
 # --  FEATURES  --
 # ----------------
@@ -6,8 +20,11 @@ programs = [
   "firefox",
   "ghostty",
   "vscode",
-  "slack",
   "thunderbird"
+]
+
+packages = [
+  "slack"
 ]
 
 [features.developer]
@@ -16,7 +33,10 @@ packages = ["asdf-vm"]
 
 [features.gaming]
 programs = [
-  "steam",
+  "steam"
+]
+
+packages = [
   "vesktop"
 ]
 

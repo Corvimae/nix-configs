@@ -9,14 +9,7 @@
         home.stateVersion = "26.05";
       }
     ];
-
-    # may = {
-    #   profiles = {
-    #     developer.enable = true;
-    #     darwin.enable = true;
-    #   };
-    # };
-
+    
     programs.zsh.shellAliases = {
       renix = "sudo darwin-rebuild switch --flake ~/Projects/nix-configs";
       nix-repl = "nix repl --extra-experimental-features 'flakes' nixpkgs";

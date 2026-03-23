@@ -1,11 +1,8 @@
 { lib, pkgs, config, inputs, ... }:
 
 let
-  # cfg = config.may.features.desktop;
-  # cfg = pkgs.mayUtils.getFeatureOption config "desktop";
   cfg = config.may.features.desktop;
 in {
-  # config = pkgs.mayUtils.mkIfFeature config "desktop" {
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

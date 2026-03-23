@@ -45,7 +45,6 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.sharedModules = [
-              # inputs.self.homeModules.options
               inputs.plasma-manager.homeModules.plasma-manager
               inputs.self.homeModules.plasma
             ];

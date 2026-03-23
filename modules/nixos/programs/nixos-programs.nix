@@ -1,5 +1,6 @@
 { self, config, lib, pkgs, ... }:
 
+# todo: break this out into its own steam module.
 let
   steamCfg = config.may.programs.steam;
 

@@ -2,6 +2,7 @@
   imports = [
     # kinda cheating importing this here but it's okay
     # nobody needs to know :)
+    # todo: fix this lol
     ../options.nix
 
     # actual program imports

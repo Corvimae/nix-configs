@@ -12,13 +12,6 @@
       }
     ];
 
-    # may = {
-    #   profiles = {
-    #     desktop.enable = true;
-    #     developer.enable = true;
-    #   };
-    # };
-    
     programs.zsh.shellAliases = {
       renix = "sudo nixos-rebuild switch";
       nix-repl = "nix repl --extra-experimental-features 'flakes' nixpkgs";

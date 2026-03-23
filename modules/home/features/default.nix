@@ -10,7 +10,5 @@
   imports = [
     ./home.nix
     ./darwin.nix
-    ./desktop.nix
-    ./developer.nix
   ];
 }

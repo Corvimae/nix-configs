@@ -2,17 +2,24 @@ final: prev: {
   mayUtils = let
     lib = prev.lib;
   in rec {
-    mkGroupedOption = group: name: {
+    # Create an enable option with a boilerplate Group - Name
+    # description.
+    mkGroupedEnableOption = group: name: {
       enable = lib.mkEnableOption "${group} — ${name}";
     };
+
+    # Create a generic option for every value in a list of strings.
+    # The option name will match the string.
     mkOptionSet = description: list: lib.pipe list [
       (builtins.map(name: {
         inherit name;
-        value = mkGroupedOption description name; # todo: camelcase?
+        value = mkGroupedEnableOption description name; # todo: camelcase?
       }))
       (builtins.listToAttrs)
     ];
 
+    # Define all the types of option sets we want for our
+    # config.
     defineOptions = {
       features ? [],
       programs ? [],
@@ -26,6 +33,15 @@ final: prev: {
       packages = mkOptionSet "Packages" packages;
     };
 
+    # Load a TOML config file and determine every unique value
+    # within it so that we can create a comprehensive set of 
+    # options.
+    #
+    # For each option group (service, programs, etc.), a list
+    # is created containing every value specified within a host
+    # definition or a feature definition.
+    #
+    # Possible todo: Expand this to programs as well.
     loadFlattenedConfigToml = file:
       let
         toml = file
@@ -47,17 +63,28 @@ final: prev: {
           |> lib.lists.unique; 
       });
 
+    # Take a TOML config file and define options off its
+    # comprehensive value sets.
     buildOptionsFromToml = file:
       file
       |> loadFlattenedConfigToml
       |> defineOptions;
 
+    # Turn a list of keys into a list of enabled options.
+    # e.g.
+    # ["a" "b"] becomes {
+    #   a = { enable = true; };
+    #   b = { enable = true; }; 
+    # }
     hydrateOptionSet = set:
       set
       |> lib.lists.foldr(item: acc: {
         ${item}.enable = true;
       } // acc) {};
 
+    # Load a config TOML for a host and turn it into
+    # a hydrated list of option properties by merging
+    # features into the specified sets.
     loadConfig = hostname: file:
       let
         toml =
@@ -67,6 +94,8 @@ final: prev: {
 
         config = { inherit hostname; } // toml.hosts.${hostname};
         
+        # Grab the options specified in the features enabled in
+        # this host.
         featureOptions =
           ["programs" "packages" "services"]
           |> lib.lists.foldr(groupName: acc: acc // {
@@ -78,6 +107,7 @@ final: prev: {
               |> lib.lists.flatten;
           }) {};
 
+          # Merge in the features options to the host-specific options.
           mergedOptions =
             ["programs" "packages" "services" "features"]
             |> lib.lists.foldr(groupName: acc: acc // {
