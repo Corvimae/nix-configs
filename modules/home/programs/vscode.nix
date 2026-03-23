@@ -16,6 +16,7 @@ in {
         jnoortheen.nix-ide
         styled-components.vscode-styled-components
         redhat.vscode-yaml
+        tamasfe.even-better-toml
 
         # utils
         eamodio.gitlens
