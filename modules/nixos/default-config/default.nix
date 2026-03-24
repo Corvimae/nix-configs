@@ -5,7 +5,7 @@
     ./bootloader.nix
     ./networking.nix
     ./locale.nix
-    ./nixpkgs.nix
+    ./nixSettings.nix
     ./systemPackages.nix
     ./services.nix
     ./users.nix
