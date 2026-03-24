@@ -14,6 +14,7 @@
 
     programs.zsh.shellAliases = {
       renix = "sudo nixos-rebuild switch";
+      nix-upgrade = "sudo nixos-rebuild switch --upgrade";
       nix-repl = "nix repl --extra-experimental-features 'flakes' nixpkgs";
     };
   };

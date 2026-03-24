@@ -40,6 +40,9 @@ packages = [
   "vesktop"
 ]
 
+[features.laptop]
+packages = []
+
 # ---------------
 # --   HOSTS   --
 # ---------------
@@ -49,6 +52,7 @@ homeConfig = true
 
 features = [
   "desktop",
+  "laptop",
   "developer",
   "gaming"
 ]

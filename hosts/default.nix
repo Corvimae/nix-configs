@@ -20,6 +20,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.self.nixosModules.defaultConfig
           inputs.self.nixosModules.defaultUsers
+          inputs.self.nixosModules.features
           inputs.self.nixosModules.services
           inputs.self.nixosModules.nixosPrograms
           inputs.self.nixosModules.firefox

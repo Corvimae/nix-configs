@@ -9,6 +9,7 @@ better way!
 
 ## things that you still have to do manually
 - simlink this into `/etc/nixos`.
-- set up certain programs:
+- set up certain programs + services:
   - vesktop: everything
   - bitwarden firefox extension: log in + show autofill suggestions on form fields
+  - tailscale: add the new device as described [here](https://nixos.wiki/wiki/Tailscale).

@@ -3,7 +3,6 @@
 let
   cfg = config.may.features.desktop;
 in {
-
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       (catppuccin-kde.override {
