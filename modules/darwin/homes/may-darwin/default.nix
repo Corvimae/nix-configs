@@ -20,6 +20,9 @@
       board-game-manager-context = "kubectl config use-context do-nyc1-board-game-manager";
       gdq-context = "kubectl config use-context do-nyc1-k8s-gdq-api";
       tracker-context = "kubectl config use-context do-nyc1-gdq-donation-tracker";
+
+      # ssh shortcuts
+      studio-nodecg = "ssh -p 2010 gdq-studio-server";
     };
   };
 }
