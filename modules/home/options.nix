@@ -3,7 +3,7 @@
 {
   # Generate the options here so that they can all
   # be referenced within home-manager. This has
-  # to happen at the system level as well becuase
+  # to happen at the system level as well because
   # home-manager configs are a nightmare.
 
   options.may = pkgs.mayUtils.defineAllOptions ../../config.toml;

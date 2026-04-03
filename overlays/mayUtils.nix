@@ -119,7 +119,7 @@ final: prev: {
                 |> lib.lists.unique;
             }) {};
       in {
-        inherit (config) hostname class;
+        inherit (config) hostname class plasma;
         homeConfig = lib.attrsets.attrByPath ["homeConfig"] false config; 
         features = hydrateOptionSet mergedOptions.features;
         programs = hydrateOptionSet mergedOptions.programs;
@@ -144,6 +144,13 @@ final: prev: {
         type = lib.types.bool;
         description = "Whether to enable home-manager-based configs.";
         # default = false;
+      };
+
+      plasma = {
+        launcherIcon = lib.mkOption {
+          type = lib.types.str;
+          description = "The icon to use for the application launcher in Plasma desktop.";
+        };
       };
      } // (buildOptionsFromToml configFile);
   };

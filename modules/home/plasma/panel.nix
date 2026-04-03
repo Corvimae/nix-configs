@@ -2,7 +2,6 @@
 
 let
   cfg = config.may.features.desktop;
-
   widgets = {
     battery = {
       battery = {
@@ -13,6 +12,7 @@ let
     apps = {
       iconTasks = {
         launchers = [
+          "applications:thunderbird.desktop"
           "applications:firefox.desktop"
           "applications:org.kde.dolphin.desktop"
           "applications:vesktop.desktop"
@@ -53,7 +53,7 @@ let
     kickoff = {
       kickoff = {
         sortAlphabetically = true;
-        icon = "nix-snowflake";
+        icon = config.may.plasma.launcherIcon;
       };
     };
 
@@ -91,10 +91,10 @@ in {
   config = lib.mkIf cfg.enable {
     # TODO remove this after the bug gets fixed
     # https://github.com/nix-community/plasma-manager/issues/577
-    programs.plasma.startup.desktopScript."panels".preCommands = lib.mkForce ''
-      sleep 3
-      [ -f ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc ] && rm ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc        
-    '';
+    # programs.plasma.startup.desktopScript."panels".preCommands = lib.mkForce ''
+    #   sleep 3
+    #   [ -f ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc ] && rm ${config.xdg.configHome}/plasma-org.kde.plasma.desktop-appletsrc        
+    # '';
 
     programs.plasma.panels = with widgets; [
       {

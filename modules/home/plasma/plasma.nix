@@ -14,7 +14,7 @@ in {
 
     programs.plasma = {
       inherit (cfg) enable;
-
+      
       workspace = {
         lookAndFeel = "Catppuccin-Latte-Lavender";
         # windowDecorations = {
@@ -32,7 +32,9 @@ in {
           "Window Quick Tile Right" = "";
         };
       };
+
       kwin = {
+        edgeBarrier = 0;
         titlebarButtons = {
           left = [
           ];

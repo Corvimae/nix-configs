@@ -61,6 +61,9 @@ programs = []
 
 services = ["sshAgent"]
 
+[hosts.magnezone.plasma]
+launcherIcon = "nix-snowflake"
+
 [hosts.Archen]
 class = "darwin"
 homeConfig = true
@@ -75,3 +78,21 @@ packages = [
   "yt-dlp",
   "doctl"
 ]
+
+# special cachyos config
+[hosts.duosion]
+class = "iso"
+homeConfig = true
+
+features = [
+  "desktop",
+  "developer",
+  "gaming"
+]
+
+programs = []
+services = []
+
+[hosts.duosion.plasma]
+launcherIcon = "org.cachyos.hello"
+

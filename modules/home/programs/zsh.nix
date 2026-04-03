@@ -14,6 +14,9 @@ in {
 
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     dotDir = lib.mkDefault "${config.xdg.configHome}/zsh";
     oh-my-zsh = {
