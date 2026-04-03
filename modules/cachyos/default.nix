@@ -39,19 +39,26 @@ in {
           # don't like that config.xdg.configHome isn't available here.
           # todo: make a util for this.
           "/home/may/.config/pipewire/pipewire.conf.d/05-virtual-cables.conf" = {
-            source = ./files/pipewire/05-virtual-cables.conf;
+            source = ./files/pipewire/pipewire.conf.d/05-virtual-cables.conf;
           };
           "/home/may/.config/pipewire/pipewire.conf.d/12-choppy-under-load.conf" = {
-            source = ./files/pipewire/12-choppy-under-load.conf;
+            source = ./files/pipewire/pipewire.conf.d/12-choppy-under-load.conf;
           };
           "/home/may/.config/pipewire/pipewire.conf.d/13-discord-override.conf" = {
-            source = ./files/pipewire/13-discord-override.conf;
+            source = ./files/pipewire/pipewire.conf.d/13-discord-override.conf;
           };
           "/home/may/.config/pipewire/pipewire.conf.d/14-quantum-overrides.conf" = {
-            source = ./files/pipewire/14-quantum-overrides.conf;
+            source = ./files/pipewire/pipewire.conf.d/14-quantum-overrides.conf;
           };
           "/home/may/.config/pipewire/pipewire.conf.d/15-application-specific-routing.conf" = {
-            source = ./files/pipewire/15-application-specific-routing.conf;
+            source = ./files/pipewire/pipewire.conf.d/15-application-specific-routing.conf;
+          };
+          "/home/may/.config/pipewire/pipewire.conf.d/16-chatot-links.conf" = {
+            source = ./files/pipewire/pipewire.conf.d/16-chatot-links.conf;
+          };
+          "/home/may/.config/pipewire/scripts/create-links.sh" = {
+            source = ./files/pipewire/scripts/create-links.sh;
+            executable = true;
           };
         };
       }
