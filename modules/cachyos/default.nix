@@ -1,4 +1,4 @@
-{ inputs, config, ... }: let
+{ inputs, lib, config, ... }: let
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
     overlays = [
@@ -30,6 +30,10 @@ in {
         
         targets.genericLinux.enable = true;
         programs.home-manager.enable = true;
+
+        # Has trouble acquiring an OpenGL context when installed via nixpkgs
+        programs.ghostty.package = null;
+        programs.ghostty.systemd.enable = lib.mkForce false;
 
         programs.zsh.shellAliases = {
           renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may --extra-experimental-features 'nix-command flakes pipe-operators'";

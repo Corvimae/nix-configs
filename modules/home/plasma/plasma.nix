@@ -30,6 +30,8 @@ in {
           "Window Quick Tile Left" = "";
           "Window Quick Tile Top" = "";
           "Window Quick Tile Right" = "";
+          "Walk Through Windows of Current Application" = "";
+          "Walk Through Windows of Current Application (Reverse)" = "";
         };
       };
 

@@ -14,6 +14,7 @@ in {
           packages = with pkgs.firefox-addons; [
             ublock-origin
             bitwarden-password-manager
+            gumbo-twitch-companion
           ];
         };
       };
