@@ -20,10 +20,10 @@ programs = [
   "firefox",
   "ghostty",
   "vscode",
-  "thunderbird"
 ]
 
 packages = [
+  "thunderbird",
   "slack"
 ]
 
@@ -81,7 +81,7 @@ packages = [
 
 # special cachyos config
 [hosts.duosion]
-class = "iso"
+class = "standalone"
 homeConfig = true
 
 features = [
@@ -92,6 +92,7 @@ features = [
 
 programs = []
 services = []
+packages = []
 
 [hosts.duosion.plasma]
 launcherIcon = "org.cachyos.hello"

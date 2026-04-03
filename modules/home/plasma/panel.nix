@@ -12,7 +12,7 @@ let
     apps = {
       iconTasks = {
         launchers = [
-          "applications:thunderbird.desktop"
+          "applications:org.mozilla.Thunderbird.desktop" # might need a conditional for this, nixos seems to want thunderbird.desktop
           "applications:firefox.desktop"
           "applications:org.kde.dolphin.desktop"
           "applications:vesktop.desktop"
