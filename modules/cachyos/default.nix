@@ -37,6 +37,8 @@ in {
 
         programs.zsh.shellAliases = {
           renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may --extra-experimental-features 'nix-command flakes pipe-operators'";
+          # Flip QK75N into treating FN keys normal-style
+          fix-keyboard="echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode";
         };
 
         home.file = {

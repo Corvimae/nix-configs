@@ -15,6 +15,7 @@ in {
             ublock-origin
             bitwarden-password-manager
             gumbo-twitch-companion
+            xkit-rewritten
           ];
         };
       };

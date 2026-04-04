@@ -123,6 +123,7 @@ in {
         height = 24;
         widgets = with widgets; [
           (fixedSpacer 10)
+          kickoff
           globalMenu
           spacer
           systemTray
