@@ -9,8 +9,15 @@ better way!
 
 there's also a config for a cachyos desktop in here. that one's really jank but i wanted to be able to configure plasma on both nixos and cachyos the same way. suprisingly, it works.
 
+## systems defined
+
+- `Archen` - macbook pro using nix as its package manager. not fully managed.
+- `magnezone` - framework 13 managed via nixos.
+- `duosion` - cachyos desktop using the home-manager configs defined here for ✨consistency✨.
+- `tinkaton` - nixos server that hosts a personal aur build repo.
+
 ## things that you still have to do manually
-- simlink this into `/etc/nixos`:
+- simlink this into `/etc/nixos` (if you're not using `deploy-rs`):
   ```bash
   # edit the hostname in configuration.nix first to match the new host and run
   # sudo nixos-rebuild switch. you will regret it if you do not do this.
