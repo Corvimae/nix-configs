@@ -1,7 +1,10 @@
 { self', pkgs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./bootloader.nix
+    ./hardware-configuration.nix
+  ];
 
   networking.hostName = "tinkaton";
 

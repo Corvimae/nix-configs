@@ -5,6 +5,7 @@
     home-manager
     zsh
     oh-my-zsh
+    ghostty.terminfo
   ];
 
   programs.zsh = {
