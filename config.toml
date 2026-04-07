@@ -23,6 +23,7 @@ programs = [
 ]
 
 packages = [
+  # Applications
   "thunderbird",
   "slack"
 ]
@@ -46,7 +47,7 @@ packages = []
 # ---------------
 # --   HOSTS   --
 # ---------------
-[hosts.magnezone]
+[hosts.magnezone] # personal nixos laptop
 class = "nixos"
 homeConfig = true
 
@@ -64,7 +65,7 @@ services = ["sshAgent"]
 [hosts.magnezone.plasma]
 launcherIcon = "nix-snowflake"
 
-[hosts.Archen]
+[hosts.Archen] # personal macbook pro
 class = "darwin"
 homeConfig = true
 
@@ -79,8 +80,7 @@ packages = [
   "doctl"
 ]
 
-# special cachyos config
-[hosts.duosion]
+[hosts.duosion] # personal cachyos desktop
 class = "standalone"
 homeConfig = true
 

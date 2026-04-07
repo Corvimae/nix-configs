@@ -12,7 +12,13 @@ let
     apps = {
       iconTasks = {
         launchers = [
-          "applications:org.mozilla.Thunderbird.desktop" # might need a conditional for this, nixos seems to want thunderbird.desktop
+          (
+            # NixOS installs a differently named package from Arch
+            if config.may.class == "standalone" then 
+              "applications:org.mozilla.Thunderbird.desktop" 
+            else
+              "applications:thunderbird.desktop"
+          )
           "applications:firefox.desktop"
           "applications:org.kde.dolphin.desktop"
           "applications:vesktop.desktop"

@@ -10,6 +10,9 @@ in {
         accents = ["lavender"];
         winDecStyles = ["classic"];
       })
+      (reversal-icon-theme.override {
+        colorVariants = ["purple"];
+      })
     ];
 
     programs.plasma = {
@@ -17,6 +20,7 @@ in {
       
       workspace = {
         lookAndFeel = "Catppuccin-Latte-Lavender";
+        iconTheme = "Reversal-purple";
         # windowDecorations = {
         #   theme = "Catppuccin-Latte-Lavender";
         #   library = "org.kde.kwin.aurorae.v2";

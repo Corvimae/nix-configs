@@ -54,7 +54,7 @@
         ./modules/nixos
         ./modules/darwin
         ./modules/home
-        ./modules/cachyos
+        ./modules/standalone
         ./overlays
         ./hosts
       ];
