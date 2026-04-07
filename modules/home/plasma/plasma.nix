@@ -13,7 +13,6 @@ in {
       (reversal-icon-theme.override {
         colorVariants = ["purple"];
       })
-      whitesur-kde
     ];
 
     programs.plasma = {
@@ -24,7 +23,7 @@ in {
         theme = "Catppuccin-Latte-Lavender";
         iconTheme = "Reversal-purple";
         windowDecorations = {
-          theme = "Catppuccin-Latte-Classic";
+          theme = "__aurorae__svg__CatppuccinLatte-Classic";
           library = "org.kde.kwin.aurorae.v2";
         };
         splashScreen.theme = "org.kde.breeze.desktop";

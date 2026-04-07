@@ -32,6 +32,8 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    archix.url = "github:SamLukeYes/archix";
   };
 
   outputs = {

@@ -52,11 +52,24 @@
           }
         ];
       };
+
       Archen = {
         arch = "aarch64";
         class = "darwin";
         modules = [
           homeManagerOpts
+        ];
+      };
+
+      tinkaton = {
+        arch = "x86_64";
+        class = "nixos";
+        modules = [
+          inputs.archix.nixosModules.default
+          homeManagerOpts
+          {
+            home-manager.useGlobalPkgs = true;
+          }
         ];
       };
     };

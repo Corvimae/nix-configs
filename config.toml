@@ -97,3 +97,11 @@ packages = []
 [hosts.duosion.plasma]
 launcherIcon = "org.cachyos.hello"
 
+[hosts.tinkaton] # aur build server
+class = "nixos"
+homeConfig= true
+
+features = [
+  "developer"
+]
+
