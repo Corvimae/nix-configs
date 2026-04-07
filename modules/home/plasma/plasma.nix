@@ -13,19 +13,21 @@ in {
       (reversal-icon-theme.override {
         colorVariants = ["purple"];
       })
+      whitesur-kde
     ];
 
     programs.plasma = {
       inherit (cfg) enable;
       
       workspace = {
-        lookAndFeel = "Catppuccin-Latte-Lavender";
+        colorScheme = "Catppuccin-Latte-Lavender";
+        theme = "Catppuccin-Latte-Lavender";
         iconTheme = "Reversal-purple";
-        # windowDecorations = {
-        #   theme = "Catppuccin-Latte-Lavender";
-        #   library = "org.kde.kwin.aurorae.v2";
-        # };
-        # splashScreen.theme = "org.kde.breeze.desktop";
+        windowDecorations = {
+          theme = "Catppuccin-Latte-Classic";
+          library = "org.kde.kwin.aurorae.v2";
+        };
+        splashScreen.theme = "org.kde.breeze.desktop";
         # wallpaper = "";
       };
       shortcuts = {
