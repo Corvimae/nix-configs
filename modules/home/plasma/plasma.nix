@@ -41,6 +41,13 @@ in {
         };
       };
 
+      kscreenlocker = {
+        timeout = 15;
+        lockOnResume = true;
+        passwordRequired = true;
+        passwordRequiredDelay = 30;
+      };
+
       kwin = {
         edgeBarrier = 0;
         titlebarButtons = {

@@ -36,7 +36,7 @@ in {
         programs.ghostty.systemd.enable = lib.mkForce false;
 
         programs.zsh.shellAliases = {
-          renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may --extra-experimental-features 'nix-command flakes pipe-operators'";
+          renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may --extra-experimental-features 'nix-command flakes pipe-operators' -b backup";
           # Flip QK75N into treating FN keys normal-style
           fix-keyboard="echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode";
         };
