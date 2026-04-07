@@ -99,7 +99,7 @@ launcherIcon = "org.cachyos.hello"
 
 [hosts.tinkaton] # aur build server
 class = "nixos"
-homeConfig= true
+homeConfig = true
 
 features = [
   "developer"

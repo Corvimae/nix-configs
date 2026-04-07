@@ -10,7 +10,13 @@ better way!
 there's also a config for a cachyos desktop in here. that one's really jank but i wanted to be able to configure plasma on both nixos and cachyos the same way. suprisingly, it works.
 
 ## things that you still have to do manually
-- simlink this into `/etc/nixos`.
+- simlink this into `/etc/nixos`:
+  ```bash
+  # edit the hostname in configuration.nix first to match the new host and run
+  # sudo nixos-rebuild switch. you will regret it if you do not do this.
+  sudo rm -rf /etc/nixos # make sure to copy and import hardware-configuration.nix first!!!!
+  ln -sT /path/to/this/repo /etc/nixos
+  ```
 - set up certain programs + services:
   - vesktop: everything
   - bitwarden firefox extension: log in + show autofill suggestions on form fields

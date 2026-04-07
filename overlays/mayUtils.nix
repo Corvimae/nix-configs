@@ -119,8 +119,9 @@ final: prev: {
                 |> lib.lists.unique;
             }) {};
       in {
-        inherit (config) hostname class plasma;
-        homeConfig = lib.attrsets.attrByPath ["homeConfig"] false config; 
+        inherit (config) hostname class;
+        homeConfig = lib.attrsets.attrByPath ["homeConfig"] false config;
+        plasma = lib.attrsets.attrByPath ["plasma"] {} config;
         features = hydrateOptionSet mergedOptions.features;
         programs = hydrateOptionSet mergedOptions.programs;
         packages = hydrateOptionSet mergedOptions.packages;

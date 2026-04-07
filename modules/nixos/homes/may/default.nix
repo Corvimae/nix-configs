@@ -5,7 +5,6 @@
     imports = [
       inputs.self.homeModules.sharedHomeModules
       inputs.self.homeModules.xdg
-      inputs.self.homeModules.plasma
       {
         home.username = "may";
         home.stateVersion = "25.11";
