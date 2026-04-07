@@ -101,7 +101,9 @@ launcherIcon = "org.cachyos.hello"
 class = "nixos"
 homeConfig = true
 
-features = [
-  "developer"
-]
+features = ["developer"]
+
+services = ["nginx"]
+
+packages = ["yay"]
 

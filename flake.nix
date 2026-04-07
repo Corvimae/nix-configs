@@ -11,6 +11,7 @@
     
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
+    deploy-rs.url = "github:serokell/deploy-rs";
     
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -52,13 +53,14 @@
       imports = [
         inputs.easy-hosts.flakeModule
         inputs.home-manager.flakeModules.home-manager
+        ./deploy
+        ./hosts
         ./modules/shared
         ./modules/nixos
         ./modules/darwin
         ./modules/home
         ./modules/standalone
         ./overlays
-        ./hosts
       ];
 
       perSystem = { system, ... }: {
