@@ -48,15 +48,15 @@ in {
           "/home/may/.config/pipewire/pipewire.conf.d/05-virtual-cables.conf" = {
             source = ./files/pipewire/pipewire.conf.d/05-virtual-cables.conf;
           };
-          "/home/may/.config/pipewire/pipewire.conf.d/12-choppy-under-load.conf" = {
-            source = ./files/pipewire/pipewire.conf.d/12-choppy-under-load.conf;
-          };
+          # "/home/may/.config/pipewire/pipewire.conf.d/12-choppy-under-load.conf" = {
+          #   source = ./files/pipewire/pipewire.conf.d/12-choppy-under-load.conf;
+          # };
           "/home/may/.config/pipewire/pipewire.conf.d/13-discord-override.conf" = {
             source = ./files/pipewire/pipewire.conf.d/13-discord-override.conf;
           };
-          "/home/may/.config/pipewire/pipewire.conf.d/14-quantum-overrides.conf" = {
-            source = ./files/pipewire/pipewire.conf.d/14-quantum-overrides.conf;
-          };
+          # "/home/may/.config/pipewire/pipewire.conf.d/14-quantum-overrides.conf" = {
+          #   source = ./files/pipewire/pipewire.conf.d/14-quantum-overrides.conf;
+          # };
           "/home/may/.config/pipewire/pipewire.conf.d/15-application-specific-routing.conf" = {
             source = ./files/pipewire/pipewire.conf.d/15-application-specific-routing.conf;
           };

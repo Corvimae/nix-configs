@@ -1,4 +1,4 @@
-{ self', pkgs, ... }:
+{ self', inputs, pkgs, ... }:
 
 {
   imports = [
@@ -11,6 +11,8 @@
   may = pkgs.mayUtils.loadConfig "tinkaton" ../../config.toml;
 
   environment.systemPackages = with pkgs; [
+    paru
+    inputs.archix.packages.x86_64-linux.devtools
     (writeShellScriptBin "build-aur" (builtins.readFile ./scripts/build-aur.sh))
   ];
 
@@ -24,4 +26,11 @@
       autoindex on;
     '';
   };
+
+  # self-reference the may-aur db
+  programs.pacman.conf.extraConfig = ''
+    [may-aur]
+    SigLevel = Optional TrustAll
+    Server = file:///opt/arch-repo/aur-db/os/$arch
+  '';
 }
