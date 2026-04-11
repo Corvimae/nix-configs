@@ -13,6 +13,7 @@ in {
       (reversal-icon-theme.override {
         colorVariants = ["purple"];
       })
+      # may.kde-edna-light
     ];
 
     programs.plasma = {

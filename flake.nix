@@ -53,6 +53,7 @@
       imports = [
         inputs.easy-hosts.flakeModule
         inputs.home-manager.flakeModules.home-manager
+        ./packages
         ./deploy
         ./hosts
         ./modules/shared
@@ -67,10 +68,13 @@
         _module.args.pkgs = import nixpkgs {
           inherit system;
           # If you're adding overlays and they're being used in shared or nix-darwin modules,
-          # you need to add the overlay in modules/darwin/default-config.nix as well.
+          # you need to add the overlay in modules/darwin/default-config.nix and
+          # modules/nixos/default-config/nixSettings.nix as well.
           overlays = [
             inputs.firefox-addons.overlays.default
             inputs.self.overlays.mayUtils
+            # my packages
+            (final: prev: { may = inputs.self.packages.${prev.system}; })
           ];
           config.allowUnfree = true;
         };

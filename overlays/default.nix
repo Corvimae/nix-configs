@@ -1,5 +1,4 @@
 {
   flake.overlays = {
-    mayUtils = import ./mayUtils.nix;
-  };
+    mayUtils = import ./mayUtils.nix;  };
 }

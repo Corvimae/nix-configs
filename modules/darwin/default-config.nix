@@ -10,5 +10,7 @@
   # Very annoying that you need to redefine this here :(
   nixpkgs.overlays = [
     inputs.self.overlays.mayUtils
+     # my packages
+    (final: prev: { may = inputs.self.packages.${prev.system}; })  
   ];
 }
