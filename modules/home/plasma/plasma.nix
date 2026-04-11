@@ -5,11 +5,18 @@ let
 in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      (catppuccin-kde.override {
-        flavour = ["latte"];
-        accents = ["lavender"];
-        winDecStyles = ["classic"];
-      })
+      ((catppuccin-kde
+        .overrideAttrs (finalAttrs: prevAttrs: {
+          patches = prevAttrs.patches ++ [
+            ./patches/catppuccin.patch
+          ];
+        }))
+        .override {
+          flavour = ["latte"];
+          accents = ["lavender"];
+          winDecStyles = ["classic"];
+        }
+      )
       (reversal-icon-theme.override {
         colorVariants = ["purple"];
       })

@@ -1,0 +1,20 @@
+diff --git a/Resources/Aurorae/Common/CatppuccinLatte-Classicrc b/Resources/Aurorae/Common/CatppuccinLatte-Classicrc
+index d6935cb..1109709 100644
+--- a/Resources/Aurorae/Common/CatppuccinLatte-Classicrc
++++ b/Resources/Aurorae/Common/CatppuccinLatte-Classicrc
+@@ -16,12 +16,12 @@ BorderTop=0
+ BorderLeft=0
+ BorderRight=0
+ BorderBottom=0
+-ButtonHeight=18
+-ButtonWidth=18
++ButtonHeight=14
++ButtonWidth=14
+ ButtonMarginTop=2
+ ButtonMarginLeft=4
+ ButtonMarginRight=4
+-ButtonSpacing=12
++ButtonSpacing=10
+ ExplicitButtonSpacer=10
+ PaddingBottom=67
+ PaddingLeft=54
