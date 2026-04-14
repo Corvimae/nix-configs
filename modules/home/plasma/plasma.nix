@@ -46,6 +46,7 @@ in {
           "Walk Through Windows of Current Application" = "";
           "Walk Through Windows of Current Application (Reverse)" = "";
         };
+         "services/org.kde.plasma-systemmonitor.desktop"._launch = "Ctrl+Shift+Esc";
       };
 
       kscreenlocker = {
