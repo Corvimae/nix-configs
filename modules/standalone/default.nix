@@ -4,6 +4,7 @@
     overlays = [
       inputs.firefox-addons.overlays.default
       inputs.self.overlays.mayUtils
+      inputs.self.overlays.pipewireUtils
     ];
     config.allowUnfree = true;
   };
@@ -22,6 +23,7 @@ in {
       inputs.self.homeModules.services
       # inputs.self.homeModules.xdg
       inputs.self.homeModules.plasma
+      ./pipewire.nix
       {
         home.username = "may";
         home.homeDirectory = "/home/may";
@@ -37,36 +39,11 @@ in {
 
         programs.zsh.shellAliases = {
           renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may --extra-experimental-features 'nix-command flakes pipe-operators' -b backup";
+          nix-upgrade = "cd ~/.config/nix-configs && nix flake update --extra-experimental-features \"nix-command flakes\" && renix";
           nix-deploy = "nix run github:serokell/deploy-rs ~/.config/nix-configs";
+
           # Flip QK75N into treating FN keys normal-style
           fix-keyboard="echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode";
-        };
-
-        home.file = {
-          # don't like that config.xdg.configHome isn't available here.
-          # todo: make a util for this.
-          "/home/may/.config/pipewire/pipewire.conf.d/05-virtual-cables.conf" = {
-            source = ./files/pipewire/pipewire.conf.d/05-virtual-cables.conf;
-          };
-          # "/home/may/.config/pipewire/pipewire.conf.d/12-choppy-under-load.conf" = {
-          #   source = ./files/pipewire/pipewire.conf.d/12-choppy-under-load.conf;
-          # };
-          "/home/may/.config/pipewire/pipewire.conf.d/13-discord-override.conf" = {
-            source = ./files/pipewire/pipewire.conf.d/13-discord-override.conf;
-          };
-          # "/home/may/.config/pipewire/pipewire.conf.d/14-quantum-overrides.conf" = {
-          #   source = ./files/pipewire/pipewire.conf.d/14-quantum-overrides.conf;
-          # };
-          "/home/may/.config/pipewire/pipewire.conf.d/15-application-specific-routing.conf" = {
-            source = ./files/pipewire/pipewire.conf.d/15-application-specific-routing.conf;
-          };
-          "/home/may/.config/pipewire/pipewire.conf.d/16-chatot-links.conf" = {
-            source = ./files/pipewire/pipewire.conf.d/16-chatot-links.conf;
-          };
-          "/home/may/.config/pipewire/scripts/create-links.sh" = {
-            source = ./files/pipewire/scripts/create-links.sh;
-            executable = true;
-          };
         };
       }
     ];

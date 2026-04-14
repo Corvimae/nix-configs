@@ -73,6 +73,7 @@
           overlays = [
             inputs.firefox-addons.overlays.default
             inputs.self.overlays.mayUtils
+            inputs.self.overlays.pipewireUtils
             # my packages
             (final: prev: { may = inputs.self.packages.${prev.system}; })
           ];
