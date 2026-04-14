@@ -7,8 +7,8 @@
 
     # actual program imports
     ./ghostty
+    ./vscode
     ./firefox.nix
-    ./vscode.nix
     ./git.nix
     ./misc.nix
     ./zsh.nix

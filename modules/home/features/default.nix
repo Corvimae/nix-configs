@@ -7,6 +7,8 @@
   # aware of the requirements!
 
   # Use feature modules for configuration, not for installation.
+
+  # Home features are kinda bad, they don't work for standalone hosts.
   imports = [
     ./home.nix
     ./darwin.nix

@@ -27,16 +27,7 @@ in {
           dbaeumer.vscode-eslint
         ];
 
-        userSettings = {
-          "editor.tabSize" = 2;
-          "explorer.confirmDragAndDrop" = false;
-          "explorer.confirmDelete" = false;
-          "terminal.integrated.stickyScroll.enabled" = false;
-          "terminal.integrated.fontLigatures.enabled" = true;
-          "workbench.editor.useModal" = "off";
-          "chat.disableAIFeatures" = true;
-          "chat.autopilot.enabled" = false;
-        };
+        userSettings = import ./settings.nix;
       };
     };
   };

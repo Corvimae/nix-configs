@@ -2,8 +2,7 @@
 
 let
   enable = osConfig.may.homeConfig;
-in
-{  
+in {  
   config = lib.mkIf enable {
     home = {
       # kind of annoying but it works

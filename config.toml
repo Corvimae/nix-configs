@@ -44,6 +44,9 @@ packages = [
 [features.laptop]
 packages = []
 
+[features.fonts]
+packages = []
+
 # ---------------
 # --   HOSTS   --
 # ---------------
@@ -60,7 +63,10 @@ features = [
 
 programs = []
 
-services = ["sshAgent"]
+services = [
+  "fonts",
+  "sshAgent"
+]
 
 [hosts.magnezone.plasma]
 launcherIcon = "nix-snowflake"
@@ -91,7 +97,7 @@ features = [
 ]
 
 programs = []
-services = []
+services = ["fonts"]
 packages = []
 
 [hosts.duosion.plasma]
