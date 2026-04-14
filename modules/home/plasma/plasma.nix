@@ -37,6 +37,7 @@ in {
         splashScreen.theme = "org.kde.breeze.desktop";
         # wallpaper = "";
       };
+
       shortcuts = {
         kwin = {
           "Window Quick Tile Bottom" = "";
@@ -68,7 +69,15 @@ in {
           ];
         };
       };
-      spectacle.shortcuts.captureRectangularRegion = "Alt+Ctrl+$";
+
+      spectacle = {
+        shortcuts.captureRectangularRegion = "Alt+Ctrl+$";
+      };
+
+      configFile = {
+        spectaclerc.General.clipboardGroup = "PostScreenshotCopyImage";
+        spectaclerc.General.useReleaseToCapture = true;  
+      };
     };
   };
 }
