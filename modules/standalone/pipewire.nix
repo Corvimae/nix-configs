@@ -10,7 +10,7 @@
           (buildSink "chatot-out-pc-2" "Chatot Out - PC 2")
           (buildSink "chatot-out-obs-monitor" "Chatot Out - OBS Monitoring")
           (buildSink "chatot-out-discord" "Chatot Out - Discord")
-          (buildSource "chatot-in-mac" "Chatot In - Mic")
+          (buildSource "chatot-in-mic" "Chatot In - Mic")
           (buildSource "chatot-in-stream-mix" "Chatot In - Stream Mix")
           (buildSource "chatot-in-vod-ignored" "Chatot In - VOD Ignored")
         ];
