@@ -1,4 +1,5 @@
 {
+  font-family = "Fira Code";
   quick-terminal-position = "left";
   quick-terminal-size = "35%";
   quick-terminal-autohide = true;
