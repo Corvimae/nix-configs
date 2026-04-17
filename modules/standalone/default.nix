@@ -5,6 +5,7 @@
       inputs.firefox-addons.overlays.default
       inputs.self.overlays.mayUtils
       inputs.self.overlays.pipewireUtils
+      (final: prev: { may = inputs.self.packages.${prev.system}; })
     ];
     config.allowUnfree = true;
   };

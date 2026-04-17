@@ -20,7 +20,8 @@ in {
       (reversal-icon-theme.override {
         colorVariants = ["purple"];
       })
-      # may.kde-edna-light
+      # temporary until this gets fixed
+      may.reversal-white-sur-patch
     ];
 
     programs.plasma = {
