@@ -154,5 +154,13 @@ final: prev: {
         };
       };
      } // (buildOptionsFromToml configFile);
+
+    # Given a list of attribute sets with `value` (required) and
+    # `enabled` (optional, defaults true), filter out all values
+    # with `enabled = false` and map them to their `value`s.
+    mkConditionalList = list:
+      list
+      |> lib.filter (entry: entry.enabled or true)
+      |> lib.map (entry: entry.value);
   };
 }

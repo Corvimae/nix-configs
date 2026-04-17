@@ -13,6 +13,7 @@
           (buildSource "chatot-in-mic" "Chatot In - Mic")
           (buildSource "chatot-in-stream-mix" "Chatot In - Stream Mix")
           (buildSource "chatot-in-vod-ignored" "Chatot In - VOD Ignored")
+          (buildSource "chatot-in-aux" "Chatot In - Aux")
         ];
       };
       # not sure if these quantum overrides are still necessary, but they don't

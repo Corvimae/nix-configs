@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ pkgs, config, inputs, lib, ... }:
 
 let
   cfg = config.may.features.desktop;
@@ -65,16 +65,19 @@ let
 
     systemTray = {
       systemTray.items = {
-        hidden = [
-          "org.kde.plasma.cameraindicator"
-          "org.kde.plasma.bluetooth"
-          "org.kde.plasma.networkmanagement"
-          "org.kde.plasma.volume"
-          "org.kde.plasma.battery"
-          "org.kde.plasma.userswitcher"
-          "org.kde.plasma.weather"
-          "org.kde.plasma.notifications"
-          "org.kde.plasma.brightness"
+        hidden = pkgs.mayUtils.mkConditionalList [
+          { value = "org.kde.plasma.cameraindicator"; }
+          { value = "org.kde.plasma.bluetooth"; }
+          { value = "org.kde.plasma.networkmanagement"; }
+          { value = "org.kde.plasma.volume"; }
+          { 
+            value = "org.kde.plasma.battery";
+            enabled = config.may.features.laptop.enable;
+          }
+          {value = "org.kde.plasma.userswitcher"; }
+          {value = "org.kde.plasma.weather"; }
+          {value = "org.kde.plasma.notifications"; }
+          {value = "org.kde.plasma.brightness"; }
         ];
       };
     };
