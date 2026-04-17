@@ -70,10 +70,10 @@ let
           { value = "org.kde.plasma.bluetooth"; }
           { value = "org.kde.plasma.networkmanagement"; }
           { value = "org.kde.plasma.volume"; }
-          { 
-            value = "org.kde.plasma.battery";
-            enabled = config.may.features.laptop.enable;
-          }
+          # { 
+          #   value = "org.kde.plasma.battery";
+          #   enabled = config.may.features.laptop.enable;
+          # }
           {value = "org.kde.plasma.userswitcher"; }
           {value = "org.kde.plasma.weather"; }
           {value = "org.kde.plasma.notifications"; }
@@ -130,18 +130,21 @@ in {
       {
         location = "top";
         height = 24;
-        widgets = with widgets; [
-          (fixedSpacer 10)
-          kickoff
-          globalMenu
-          spacer
-          systemTray
-          clipboard
-          wifi
-          battery
-          (fixedSpacer 10)
-          clock
-          (fixedSpacer 10)
+        widgets = pkgs.mayUtils.mkConditionalList [
+          { value = (widgets.fixedSpacer 10); }
+          { value = widgets.kickoff; }
+          { value = widgets.globalMenu; }
+          { value = widgets.spacer; }
+          { value = widgets.systemTray; }
+          # { value = widgets.clipboard; }
+          { value = widgets.wifi; }
+          {
+            value = widgets.battery;
+            enabled = config.may.features.laptop.enable;
+          }
+          { value = (widgets.fixedSpacer 10); }
+          { value = widgets.clock; }
+          { value = (widgets.fixedSpacer 10); }
         ];
       }
     ];
