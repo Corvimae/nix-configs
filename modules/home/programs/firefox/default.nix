@@ -33,6 +33,7 @@ in {
             ]
           );
         };
+        search = import ./search.nix { inherit pkgs; };
         settings = import ./preferences.nix;
       };
     };
