@@ -120,8 +120,11 @@ final: prev: {
             }) {};
       in {
         inherit (config) hostname class;
+
         homeConfig = lib.attrsets.attrByPath ["homeConfig"] false config;
+        personal = lib.attrsets.attrByPath ["personal"] false config;
         plasma = lib.attrsets.attrByPath ["plasma"] {} config;
+
         features = hydrateOptionSet mergedOptions.features;
         programs = hydrateOptionSet mergedOptions.programs;
         packages = hydrateOptionSet mergedOptions.packages;
@@ -144,7 +147,11 @@ final: prev: {
       homeConfig = lib.mkOption {
         type = lib.types.bool;
         description = "Whether to enable home-manager-based configs.";
-        # default = false;
+      };
+
+      personal = lib.mkOption {
+        type = lib.types.bool;
+        description = "Whether this is a personal device (as opposed to a work device).";
       };
 
       plasma = {

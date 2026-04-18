@@ -53,6 +53,7 @@ packages = []
 [hosts.magnezone] # personal nixos laptop
 class = "nixos"
 homeConfig = true
+personal = true
 
 features = [
   "desktop",
@@ -74,10 +75,13 @@ launcherIcon = "nix-snowflake"
 [hosts.Archen] # personal macbook pro
 class = "darwin"
 homeConfig = true
+personal = true
 
 features = [
   "developer"
 ]
+
+programs = ["firefox"]
 
 packages = [
   "sshpass",
@@ -89,6 +93,7 @@ packages = [
 [hosts.duosion] # personal cachyos desktop
 class = "standalone"
 homeConfig = true
+personal = true
 
 features = [
   "desktop",
@@ -106,6 +111,7 @@ launcherIcon = "org.cachyos.hello"
 [hosts.tinkaton] # aur build server
 class = "nixos"
 homeConfig = true
+personal = true
 
 features = ["developer"]
 
