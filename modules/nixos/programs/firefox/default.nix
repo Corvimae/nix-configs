@@ -13,7 +13,6 @@ in {
       };
 
       policies = import ./policies.nix;
-      preferences = import ./preferences.nix;
     };
   };
 }

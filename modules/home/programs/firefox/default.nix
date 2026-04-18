@@ -18,6 +18,7 @@ in {
             xkit-rewritten
           ];
         };
+        settings = import ./preferences.nix;
       };
     };
   };
