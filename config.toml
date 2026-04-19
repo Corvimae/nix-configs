@@ -28,6 +28,10 @@ packages = [
   "slack"
 ]
 
+services = [
+  "fonts"
+]
+
 [features.desktop-darwin]
 programs = [
   "firefox",
@@ -75,7 +79,6 @@ features = [
 programs = []
 
 services = [
-  "fonts",
   "sshAgent"
 ]
 
@@ -115,7 +118,7 @@ features = [
 ]
 
 programs = []
-services = ["fonts"]
+services = []
 packages = []
 
 [hosts.duosion.plasma]
