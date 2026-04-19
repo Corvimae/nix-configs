@@ -1,6 +1,9 @@
 {
   # largely taken from https://github.com/yokoffing/Betterfox/blob/main/user.js
 
+  # hm-specific stuff
+  "extensions.autoDisableScopes" = 0; # auto-enable extensions
+
   # performance
   "widget.gtk.global-menu.enabled" = true;
   "widget.gtk.global-menu.wayland.enabled" = true;

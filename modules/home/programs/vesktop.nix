@@ -2,12 +2,15 @@
 
 let
   cfg = config.may.programs.vesktop;
+  isStandalone = config.may.class == "standalone";
 in {
   config = lib.mkIf cfg.enable {
-    home.packages = [pkgs.vesktop];
-
     programs.vesktop = {
       inherit (cfg) enable;
+
+      package = if isStandalone
+        then null
+        else pkgs.vesktop;
 
       settings = {
         discordBranch = "stable";

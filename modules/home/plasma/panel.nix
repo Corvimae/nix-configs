@@ -23,7 +23,7 @@ let
           "applications:org.kde.dolphin.desktop"
           "applications:vesktop.desktop"
           "applications:slack.desktop"
-          "applications:code.desktop"
+          "applications:codium.desktop"
           "applications:steam.desktop"
           "applications:com.mitchellh.ghostty.desktop"
         ];
