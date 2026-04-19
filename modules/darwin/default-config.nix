@@ -1,11 +1,14 @@
 { lib, inputs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./settings.nix
+  ];
 
   security.pam.services.sudo_local.touchIdAuth = true;
-
+  
   system.stateVersion = 6;
+  system.primaryUser = "may";
 
   nixpkgs = {
     config.allowUnfree = true;

@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
-# on mac, if you make changes to this, you need to run:
-# rm /Users/may/Library/Application\ Support/Firefox/Profiles/may/search.json.mozlz4.hm-backup
-#
-# really annoying!
 {
+  force = true;
   engines = {
     ddg = {
       name = "DuckDuckGo";

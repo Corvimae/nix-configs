@@ -1,6 +1,7 @@
 { lib, inputs, ... }:
 
 {
+  home-manager.backupFileExtension = "hm-backup";
   home-manager.users.may-darwin = {
     imports = [
       inputs.self.homeModules.sharedHomeModules
