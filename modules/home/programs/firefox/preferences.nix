@@ -1,6 +1,8 @@
 {
   # largely taken from https://github.com/yokoffing/Betterfox/blob/main/user.js
 
+  "browser.startup.page" = 3; # restore previous session on startup
+
   # hm-specific stuff
   "extensions.autoDisableScopes" = 0; # auto-enable extensions
 
