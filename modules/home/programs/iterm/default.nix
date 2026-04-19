@@ -16,6 +16,7 @@ in {
         # This is really jank, but the file needs to be writable or else iterm will fail.
         # Could possibly solve this with mkOutOfStoreSymlink, but I'd rather it not write back
         # to here unless I manually update it.
+        # Definitely worried this is going to fall really out of sync and break stuff in the future :/
         onChange = ''
           cat ${preferenceFile}.link > ${preferenceFile}
           rm ${preferenceFile}.link
