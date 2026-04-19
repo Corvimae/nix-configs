@@ -10,6 +10,7 @@
   "terminal.integrated.fontLigatures.enabled" = true;
 
   "workbench.editor.useModal" = "off";
+  "workbench.startupEditor" = "none";
   "workbench.colorTheme" = "Visual Studio Dark";
 
   "chat.disableAIFeatures" = true;
