@@ -34,12 +34,11 @@ packages = ["asdf-vm"]
 
 [features.gaming]
 programs = [
-  "steam"
-]
-
-packages = [
+  "steam",
   "vesktop"
 ]
+
+packages = []
 
 [features.laptop]
 packages = []

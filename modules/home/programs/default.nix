@@ -6,11 +6,12 @@
     ../options.nix
 
     # actual program imports
+    ./firefox
     ./ghostty
     ./vscode
-    ./firefox
     ./git.nix
     ./misc.nix
+    ./vesktop.nix
     ./zsh.nix
   ];
 }
