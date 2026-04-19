@@ -35,7 +35,7 @@ in {
         programs.home-manager.enable = true;
 
         # Has trouble acquiring an OpenGL context when installed via nixpkgs
-        programs.ghostty.package = null;
+        programs.ghostty.package = lib.mkForce null;
         programs.ghostty.systemd.enable = lib.mkForce false;
 
         programs.zsh.shellAliases = {
