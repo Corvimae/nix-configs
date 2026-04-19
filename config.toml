@@ -28,6 +28,17 @@ packages = [
   "slack"
 ]
 
+[features.desktop-darwin]
+programs = [
+  "firefox",
+  "vesktop",
+  "vscode",
+]
+
+packages = [
+  "slack"
+]
+
 [features.developer]
 programs = ["git"]
 packages = ["asdf-vm"]
@@ -77,11 +88,11 @@ homeConfig = true
 personal = true
 
 features = [
-  "developer"
+  "developer",
+  "desktop-darwin"
 ]
 
 programs = [
-  "firefox",
   "iterm"
 ]
 

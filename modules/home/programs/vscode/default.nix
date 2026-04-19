@@ -7,7 +7,8 @@ in {
     programs.vscode = {
       inherit (cfg) enable;
       profiles.default = {
-        extensions = import ./extensions.nix;
+        extensions = import ./extensions.nix { inherit pkgs; };
+
         userSettings = import ./settings.nix;
       };
     };

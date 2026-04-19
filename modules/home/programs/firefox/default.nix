@@ -7,7 +7,7 @@ in {
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       inherit (cfg) enable;
-
+      
       profiles.may = {
         id = 0;
         name = "May";

@@ -18,6 +18,19 @@ in {
         hardwareVideoAcceleration = true;
         customTitleBar = true;
       };
+
+      vencord.settings.plugins = {
+        AlwaysTrust.enabled = true;
+        BetterSettings.enabled = true;
+        FixYoutubeEmbeds.enabled = true;
+        ForceOwnerCrown.enabled = true;
+        NoDevtoolsWarning.enabled = true;
+        NoF1.enabled = true;
+        NoOnboardingDelay.enabled = true;
+        NoProfileThemes.enabled = true;
+        PermissionsViewer.enabled = true;
+        WebScreenShareFixes.enabled = true;
+      };
     };
   };
 }

@@ -5,8 +5,6 @@ let
   preferenceFile = "${config.home.homeDirectory}/Library/Preferences/com.googlecode.iterm2.plist";
 in {
   config = lib.mkIf cfg.enable {
-    home.packages = [pkgs.iterm2];
-
     # To update the plist, convert it from binary to xml with:
     #   plutil -convert xml1 ~/Library/Preferences/com.googlecode.iterm2.plist
     # iTerm does seem to accept xml-formatted plists, though, so you don't need to convert it back.
