@@ -80,7 +80,10 @@ features = [
   "developer"
 ]
 
-programs = ["firefox"]
+programs = [
+  "firefox",
+  "iterm"
+]
 
 packages = [
   "sshpass",
