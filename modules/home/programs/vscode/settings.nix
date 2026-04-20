@@ -18,4 +18,7 @@
   
   "telemetry.feedback.enabled" = false;
   "telemetry.telemetryLevel" = "off";
+
+  # extension-specific settings
+  "gitlens.telemetry.enabled" = false;
 }

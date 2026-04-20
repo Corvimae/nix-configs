@@ -17,6 +17,7 @@
     overlays = [
       inputs.self.overlays.mayUtils
       inputs.firefox-addons.overlays.default
+      inputs.nix-vscode-extensions.overlays.default
       # my packages
       (final: prev: { may = inputs.self.packages.${prev.system}; })  
     ];

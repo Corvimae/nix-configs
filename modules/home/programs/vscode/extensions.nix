@@ -1,21 +1,27 @@
 { pkgs, ... }:
 
-with pkgs.vscode-extensions; [
-  # ssh
-  ms-vscode-remote.remote-ssh
-  ms-vscode-remote.remote-ssh-edit
-  ms-vscode.remote-explorer
+let 
+  marketplaceExtensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
+    # ms-vscode-remote.remote-ssh
+    # ms-vscode-remote.remote-ssh-edit
+    # ms-vscode.remote-explorer
+  ];
 
-  # highlighting
-  jnoortheen.nix-ide
-  styled-components.vscode-styled-components
-  redhat.vscode-yaml
-  tamasfe.even-better-toml
+  openVsxExtensions = with pkgs.nix-vscode-extensions.open-vsx; [
+    # ssh
+    jeanp413.open-remote-ssh
 
-  # utils
-  eamodio.gitlens
+    # highlighting
+    jnoortheen.nix-ide
+    styled-components.vscode-styled-components
+    redhat.vscode-yaml
+    tamasfe.even-better-toml
 
-  # linters
-  prisma.prisma
-  dbaeumer.vscode-eslint
-]
+    # utils
+    mk12.better-git-line-blame
+
+    # linters
+    prisma.prisma
+    dbaeumer.vscode-eslint
+  ];
+in marketplaceExtensions ++ openVsxExtensions

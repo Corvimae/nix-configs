@@ -3,6 +3,7 @@
     system = "x86_64-linux";
     overlays = [
       inputs.firefox-addons.overlays.default
+      inputs.nix-vscode-extensions.overlays.default
       inputs.self.overlays.mayUtils
       inputs.self.overlays.pipewireUtils
       (final: prev: { may = inputs.self.packages.${prev.system}; })

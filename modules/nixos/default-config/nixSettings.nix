@@ -4,6 +4,7 @@
   nixpkgs = {
     overlays = [
       inputs.firefox-addons.overlays.default
+      inputs.nix-vscode-extensions.overlays.default
       inputs.self.overlays.mayUtils
       (final: prev: { may = inputs.self.packages.${prev.system}; })
     ];

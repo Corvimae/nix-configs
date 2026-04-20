@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -72,6 +77,7 @@
           # modules/nixos/default-config/nixSettings.nix as well.
           overlays = [
             inputs.firefox-addons.overlays.default
+            inputs.nix-vscode-extensions.overlays.default
             inputs.self.overlays.mayUtils
             inputs.self.overlays.pipewireUtils
             # my packages
