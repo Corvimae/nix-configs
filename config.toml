@@ -96,8 +96,7 @@ features = [
 ]
 
 programs = [
-  "iterm",
-  "tailscale"
+  "iterm"
 ]
 
 packages = [
