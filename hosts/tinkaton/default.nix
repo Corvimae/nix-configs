@@ -28,9 +28,13 @@
   };
 
   # self-reference the may-aur db
-  programs.pacman.conf.extraConfig = ''
-    [may-aur]
-    SigLevel = Optional TrustAll
-    Server = file:///opt/arch-repo/aur-db/os/$arch
-  '';
+  programs.pacman = {
+    conf.extraConfig = ''
+      [may-aur]
+      SigLevel = Optional TrustAll
+      Server = file:///opt/arch-repo/aur-db/os/$arch
+    '';
+
+    makepkg.conf.source = ./files/makepkg.conf;
+  };
 }

@@ -103,7 +103,8 @@ packages = [
   "sshpass",
   "ffmpeg_7",
   "yt-dlp",
-  "doctl"
+  "doctl",
+  "vlc-bin"
 ]
 
 [hosts.duosion] # personal cachyos desktop
