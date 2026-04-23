@@ -39,7 +39,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    archix.url = "github:SamLukeYes/archix";
+    archix = {
+      url = "github:SamLukeYes/archix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
