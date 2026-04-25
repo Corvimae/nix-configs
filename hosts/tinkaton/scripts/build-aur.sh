@@ -1,7 +1,8 @@
 #!/usr/bin/env bash set -e
 
 pushd /home/may/aur
-yay -G $1
+rm -rf $1
+git clone https://aur.archlinux.org/$1.git
 pushd $1
 # nix run "github:SamLukeYes/archix#devtools" -- build
 paru -B . --chroot

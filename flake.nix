@@ -24,8 +24,8 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    firefox-addons = {
-      url = "github:petrkozorezov/firefox-addons-nix";
+    nix-firefox-addons = {
+      url = "github:osipog/nix-firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -79,7 +79,7 @@
           # you need to add the overlay in modules/darwin/default-config.nix and
           # modules/nixos/default-config/nixSettings.nix as well.
           overlays = [
-            inputs.firefox-addons.overlays.default
+            inputs.nix-firefox-addons.overlays.default
             inputs.nix-vscode-extensions.overlays.default
             inputs.self.overlays.mayUtils
             inputs.self.overlays.pipewireUtils

@@ -8,12 +8,14 @@ in {
     programs.firefox = {
       inherit (cfg) enable;
       
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
+
       profiles.may = {
         id = 0;
         name = "May";
         extensions = lib.mkDefault {
-          packages = pkgs.mayUtils.mkConditionalList (
-            with pkgs.firefox-addons; [
+          packages = (pkgs.mayUtils.mkConditionalList (
+            with pkgs.firefoxAddons; [
               { value = ublock-origin; }
               { value = bitwarden-password-manager; }
               { value = xkit-rewritten; }
@@ -31,7 +33,7 @@ in {
                 enabled = personal;
               }
             ]
-          );
+          ));
         };
         search = import ./search.nix { inherit pkgs; };
         settings = import ./preferences.nix;
