@@ -134,5 +134,8 @@ features = ["developer"]
 
 services = ["nginx"]
 
-packages = ["yay"]
+packages = [
+  "yay",
+  "gnupg"
+]
 

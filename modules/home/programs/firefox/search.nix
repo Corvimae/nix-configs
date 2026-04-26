@@ -25,7 +25,29 @@
       }];
 
       icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-      definedAliases = [ "@np" ];
+      definedAliases = ["@np"];
+    };
+    arch = {
+      name = "Arch Packages";
+      urls = [{
+        template = "https://archlinux.org/packages";
+        params = [
+          { name = "q"; value = "{searchTerms}"; }
+        ];
+      }];
+
+      definedAliases = ["@arch"];
+    };
+    aur = {
+      name = "Arch User Repository";
+      urls = [{
+        template = "https://aur.archlinux.org/packages";
+        params = [
+          { name = "K"; value = "{searchTerms}"; }
+        ];
+      }];
+
+      definedAliases = ["@aur"];
     };
   };
   default = "ddg";

@@ -6,6 +6,10 @@
     ./hardware-configuration.nix
   ];
 
+  # One-time manual setup: run mkarchroot /opt/build/chroot/root base-devel
+  # TODO: Make this a script that checks for that folder and makes the chroot
+  # if its not present
+
   networking.hostName = "tinkaton";
 
   may = pkgs.mayUtils.loadConfig "tinkaton" ../../config.toml;
@@ -37,4 +41,13 @@
 
     makepkg.conf.source = ./files/makepkg.conf;
   };
+
+  system.activationScripts = {
+    setupChrootConfs.text = ''
+      cp /etc/makepkg.conf /opt/build/chroot/root/etc/makepkg.conf
+      cp /etc/pacman.conf /opt/build/chroot/root/etc/pacman.conf
+      cp /etc/pacman.d/extra.conf /opt/build/chroot/root/etc/pacman.d/extra.conf
+    '';
+  };
+
 }
