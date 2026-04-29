@@ -8,7 +8,9 @@ in {
     programs.firefox = {
       inherit (cfg) enable;
       
-      configPath = "${config.xdg.configHome}/mozilla/firefox";
+      configPath = if config.may.class == "darwin"
+        then "/Users/may/Library/Application Support/Firefox/"
+        else "${config.xdg.configHome}/mozilla/firefox";
 
       profiles.may = {
         id = 0;
