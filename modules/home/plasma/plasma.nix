@@ -37,6 +37,7 @@ in {
         };
         splashScreen.theme = "org.kde.breeze.desktop";
         # wallpaper = "";
+        soundTheme = null;
       };
 
       shortcuts = {
