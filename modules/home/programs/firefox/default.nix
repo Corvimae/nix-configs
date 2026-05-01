@@ -9,7 +9,7 @@ in {
       inherit (cfg) enable;
       
       configPath = if config.may.class == "darwin"
-        then "/Users/may/Library/Application Support/Firefox/"
+        then "${config.home.homeDirectory}/Library/Application Support/Firefox/"
         else "${config.xdg.configHome}/mozilla/firefox";
 
       profiles.may = {
