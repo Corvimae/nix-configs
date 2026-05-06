@@ -7,6 +7,7 @@ in
   config = lib.mkIf cfg.enable {
     powerManagement.enable = true;
     
-    services.fprintd.enable = true;
+    # the fingerprint reader on the framework 13 is horrible
+    # services.fprintd.enable = true;
   };
 }

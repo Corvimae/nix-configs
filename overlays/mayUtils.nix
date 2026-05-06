@@ -159,6 +159,10 @@ final: prev: {
           type = lib.types.str;
           description = "The icon to use for the application launcher in Plasma desktop.";
         };
+        wallpaper = lib.mkOption {
+          type = lib.types.str;
+          description = "The wallpaper to use.";
+        };
       };
      } // (buildOptionsFromToml configFile);
 

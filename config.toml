@@ -84,6 +84,7 @@ services = [
 
 [hosts.magnezone.plasma]
 launcherIcon = "nix-snowflake"
+wallpaper = "magnezone"
 
 [hosts.Archen] # personal macbook pro
 class = "darwin"
@@ -124,6 +125,7 @@ packages = []
 
 [hosts.duosion.plasma]
 launcherIcon = "org.cachyos.hello"
+wallpaper = "duosion"
 
 [hosts.tinkaton] # aur build server
 class = "nixos"

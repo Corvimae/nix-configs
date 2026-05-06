@@ -2,6 +2,7 @@
 
 let
   cfg = config.may.features.desktop;
+  wallpaper = ../../../assets/wallpapers/${config.may.plasma.wallpaper or "generic"}-wallpaper.png;
 in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
@@ -28,6 +29,7 @@ in {
       inherit (cfg) enable;
       
       workspace = {
+        inherit wallpaper;
         colorScheme = "Catppuccin-Latte-Lavender";
         theme = "Catppuccin-Latte-Lavender";
         iconTheme = "Reversal-purple";
@@ -36,7 +38,6 @@ in {
           library = "org.kde.kwin.aurorae.v2";
         };
         splashScreen.theme = "org.kde.breeze.desktop";
-        # wallpaper = "";
         soundTheme = null;
       };
 
@@ -54,6 +55,7 @@ in {
 
       kscreenlocker = {
         timeout = 15;
+        appearance.wallpaper = wallpaper;
         lockOnResume = true;
         passwordRequired = true;
         passwordRequiredDelay = 30;
