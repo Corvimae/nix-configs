@@ -9,6 +9,8 @@ better way!
 
 there's also a config for a cachyos desktop in here. that one's really jank but i wanted to be able to configure plasma on both nixos and cachyos the same way. suprisingly, it works.
 
+wallpapers commissioned from [yogcavey](https://yogcavey.crd.co/).
+
 ## systems defined
 
 - `Archen` - macbook pro using nix as its package manager. not fully managed.
