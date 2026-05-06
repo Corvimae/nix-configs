@@ -18,7 +18,7 @@ in {
         minimizeToTray = true;
         clickTrayToShowHide = true;
         hardwareAcceleration = true;
-        hardwareVideoAcceleration = true;
+        hardwareVideoAcceleration = false;
         customTitleBar = true;
       };
 

@@ -3,6 +3,7 @@
 let
   cfg = config.may.programs.firefox;
   personal = config.may.personal;
+  developer = config.may.features.developer.enable;
 in {
   config = lib.mkIf cfg.enable {
     programs.firefox = {
@@ -24,7 +25,10 @@ in {
               { value = indie-wiki-buddy; }
               { value = youtube-suite-search-fixer; }
               { value = istilldontcareaboutcookies; }
-
+              {
+                value = react-devtools;
+                enabled = developer;
+              }
               # twitch stuff
               {
                 value = gumbo-twitch-companion;
