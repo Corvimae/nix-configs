@@ -142,4 +142,8 @@
   "browser.urlbar.suggest.topsites" = false;
   "browser.urlbar.suggest.trending" = false;
   "browser.urlbar.suggest.weather" = false;
+
+  # disable drm popups
+  "browser.eme.ui.enabled" = false;
+  "media.eme.enabled" = false;
 }
