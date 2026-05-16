@@ -4,7 +4,7 @@ let
   cfg = config.may.programs.vscode;
 in {
   config = lib.mkIf cfg.enable {
-    programs.vscode = {
+    programs.vscodium = {
       inherit (cfg) enable;
       package = pkgs.vscodium;
 
