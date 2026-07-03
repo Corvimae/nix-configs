@@ -105,7 +105,8 @@ packages = [
   "ffmpeg_7",
   "yt-dlp",
   "doctl",
-  "vlc-bin"
+  "vlc-bin",
+  "teleport"
 ]
 
 [hosts.duosion] # personal cachyos desktop

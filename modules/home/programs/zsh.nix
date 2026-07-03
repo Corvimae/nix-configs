@@ -38,6 +38,11 @@ in {
         )
 
         BULLETTRAIN_CONTEXT_DEFAULT_USER=${config.home.username}
+
+        export TELEPORT_LOGIN='Corvimae'
+        export TELEPORT_PROXY='teleport.gamesdonequick.com:443'
+        export TELEPORT_AUTH_SERVER='teleport.gamesdonequick.com:443'
+        export TELEPORT_AUTH='github'
       '';
     };
   };
