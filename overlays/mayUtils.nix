@@ -180,5 +180,9 @@ final: prev: {
       list
       |> lib.filter (entry: entry.enabled or true)
       |> lib.map (entry: entry.value);
+
+    # Does this config have the desktop feature enabled
+    # and is it set to the specified desktop?
+    isDesktopShell = name: config: config.may.features.desktop.enable && config.may.desktopShell == name;
   };
 }
