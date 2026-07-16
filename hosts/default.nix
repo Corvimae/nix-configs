@@ -5,7 +5,11 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "hm-backup";
-      home-manager.extraSpecialArgs = { inherit inputs; }; 
+      home-manager.extraSpecialArgs = { inherit inputs; };
+      home-manager.sharedModules = [
+        inputs.self.homeModules.plasma
+        inputs.self.homeModules.noctalia
+      ]; 
     };
   in {
     perClass = class: {
@@ -42,17 +46,10 @@
         class = "nixos";
         modules = [
           inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-          inputs.noctalia.nixosModules.default
-          inputs.noctalia-greeter.nixosModules.default
           homeManagerOpts
           {
             home-manager.useGlobalPkgs = true;
-            home-manager.sharedModules = [
-              # inputs.plasma-manager.homeModules.plasma-manager
-              # inputs.self.homeModules.plasma
-              inputs.noctalia.homeModules.default
-              inputs.self.homeModules.noctalia
-            ];
+            home-manager.sharedModules = [];
           }
         ];
       };

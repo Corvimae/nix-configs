@@ -3,6 +3,12 @@
 let
   enable = config.may.features.desktop.enable && config.may.desktopShell == "noctalia";
 in {
+  imports = [
+    inputs.noctalia.nixosModules.default
+    inputs.noctalia-greeter.nixosModules.default
+    inputs.monique.nixosModules.default
+  ];
+
   config = lib.mkIf enable {
     environment.systemPackages = [
       pkgs.kitty
@@ -34,6 +40,8 @@ in {
         };
       };
     };
+
+    programs.monique.enable = true;
 
     # NixOS otherwise injects a stripped PATH via Environment= on the niri.service
     # unit which shadows the imported user-manager PATH. Disabling the default

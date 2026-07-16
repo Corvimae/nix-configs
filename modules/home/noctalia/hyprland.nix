@@ -96,6 +96,16 @@ in {
             key = "T";
             cmd = "ghostty";
           })
+          (hyprBindExec {
+            key = "ALT + SHIFT + 4";
+            cmd = "grim -g \\\"$(slurp -d)\\\" - | satty -f - --copy-command wl-copy -o \\\"~/Pictures/Screenshots/%Y%m%d_%H%M%S.png\\\"";
+            noModKey = true;
+          })
+          (hyprBindExec {
+            key = "ALT + CTRL + SHIFT + 4";
+            cmd = "grim -g \\\"$(slurp -d)\\\" - | wl-copy";
+            noModKey = true;
+          })
           (hyprBind {
             key = "F";
             cmd = "hl.dsp.window.float({ action = \"toggle\" })";
@@ -250,6 +260,11 @@ in {
             match.class = "dev.noctalia.Noctalia";
             float = true;
             size = [1080 920];
+          }
+          {
+            match.class = "com.gabm.satty";
+            float = true;
+            size = [1080 800];
           }
           # {
           #   match.float = false;

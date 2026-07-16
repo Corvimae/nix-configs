@@ -5,12 +5,20 @@ let
   wallpaper = ../../../assets/wallpapers/${config.may.desktop.wallpaper or "generic"}-wallpaper.png;
   wallpaperLocation = "${config.home.homeDirectory}/Pictures/wallpaper.png";
 in {
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
+  
   config = lib.mkIf enable {
     home.file.${wallpaperLocation} = {
       source = wallpaper;
     };
 
     home.packages = with pkgs; [
+      grim
+      satty
+      slurp
+      wl-clipboard
       may.future-cyan-hyprcursor
     ];
 

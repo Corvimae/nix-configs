@@ -51,6 +51,8 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    monique.url = "github:ToRvaLDz/monique";
+
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs"; 
