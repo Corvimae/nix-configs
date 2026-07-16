@@ -1,10 +1,19 @@
-{ inputs, config, lib, ... }: 
+{ inputs, config, lib, pkgs, ... }: 
 
 let 
   enable = config.may.features.desktop.enable && config.may.desktopShell == "noctalia";
   wallpaper = ../../../assets/wallpapers/${config.may.desktop.wallpaper or "generic"}-wallpaper.png;
+  wallpaperLocation = "${config.home.homeDirectory}/Pictures/wallpaper.png";
 in {
   config = lib.mkIf enable {
+    home.file.${wallpaperLocation} = {
+      source = wallpaper;
+    };
+
+    home.packages = with pkgs; [
+      may.future-cyan-hyprcursor
+    ];
+
     programs.noctalia = {
       enable = true;
 
@@ -13,13 +22,15 @@ in {
       settings = { # This may also be a string or path to a .toml file.
         theme = {
           mode = "light";
-          source = "builtin";
-          builtin = "Catppuccin";
+          source = "community";
+          community_palette = "Lilac AMOLED";
+          wallpaper_scheme = "muted";
+          # builtin = "Catppuccin";
         };
 
         wallpaper = {
           enabled = true;
-          default.path = wallpaper;
+          default.path = wallpaperLocation;
         };
 
         dock = {
@@ -48,10 +59,14 @@ in {
           width = 900;
         };
 
-        shell.launcher = {
-          categories = false;
-          providers.session = {
-            global = true;
+        shell = {
+          font_family = "Overpass";
+          
+          launcher = {
+            categories = false;
+            providers.session = {
+              global = true;
+            };
           };
         };
 
@@ -84,8 +99,18 @@ in {
           control-center.enabled = false;
           volume.show_label = false;
           network.show_label = false;
+          clock.format = "%l:%M %P";
         };
       };
+    };
+
+    home.activation = {
+      syncGreeter = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        export PATH="${
+          lib.makeBinPath ([  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default ])
+        }:$PATH"
+        noctalia msg greeter-sync
+      '';
     };
   };
 }

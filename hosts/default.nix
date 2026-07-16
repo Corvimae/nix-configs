@@ -43,6 +43,7 @@
         modules = [
           inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
           inputs.noctalia.nixosModules.default
+          inputs.noctalia-greeter.nixosModules.default
           homeManagerOpts
           {
             home-manager.useGlobalPkgs = true;

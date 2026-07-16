@@ -64,6 +64,21 @@ in {
           # };
         };
 
+        env = [
+          {
+            _args = [
+              "HYPRCURSOR_THEME"
+              "Future-Cyan-Hyprcursor_Theme"
+            ];
+          }
+          {
+            _args = [
+              "HYPRCURSOR_SIZE"
+              "32"
+            ];
+          }
+        ];
+
         animation = [
           {
             _args = [{
@@ -130,12 +145,28 @@ in {
             cmd = "hl.dsp.focus({ workspace = \"+1\" })";
           })
           (hyprBind {
+            key = "SHIFT + up";
+            cmd = "hl.dsp.window.move({ workspace = \"-1\" })";
+          })
+          (hyprBind {
+            key = "SHIFT + down";
+            cmd = "hl.dsp.window.move({ workspace = \"+1\" })";
+          })
+          (hyprBind {
             key = "bracketleft";
             cmd = "hl.dsp.layout(\"colresize 0.5\")";
           })
           (hyprBind {
             key = "bracketright";
             cmd = "hl.dsp.layout(\"colresize 1.0\")";
+          })
+          (hyprBind {
+            key = "equal";
+            cmd = "hl.dsp.layout(\"colresize +0.1\")";
+          })
+          (hyprBind {
+            key = "minus";
+            cmd = "hl.dsp.layout(\"colresize -0.1\")";
           })
           (hyprBind {
             key = "mouse:272";
@@ -183,7 +214,6 @@ in {
             cmd = "window-switcher";
             noModKey = true;
           })
-          
           (hyprBindNoctalia {
             key = "ALT + SHIFT + Tab";
             cmd = "window-switcher";
