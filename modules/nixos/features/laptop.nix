@@ -8,6 +8,6 @@ in
     powerManagement.enable = true;
     
     # the fingerprint reader on the framework 13 is horrible
-    # services.fprintd.enable = true;
+    services.fprintd.enable = false;
   };
 }

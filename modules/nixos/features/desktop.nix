@@ -5,10 +5,6 @@ let
 in {
   config = lib.mkIf cfg.enable {  
     services.xserver.enable = true;
-
-    # Enable the KDE Plasma Desktop Environment.
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
   
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -38,8 +34,5 @@ in {
     services.openssh.enable = true;
 
     services.fwupd.enable = true;
-
-    # user-related setupj
-    system.activationScripts.createIcon = "ln -sfn ${../../../assets/user-icon.png} /var/lib/AccountsService/icons/may";
   };
 }

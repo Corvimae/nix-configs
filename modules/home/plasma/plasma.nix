@@ -1,10 +1,10 @@
 { lib, pkgs, config, inputs, ... }:
 
 let
-  cfg = config.may.features.desktop;
-  wallpaper = ../../../assets/wallpapers/${config.may.plasma.wallpaper or "generic"}-wallpaper.png;
+  enable = config.may.features.desktop.enable && config.may.desktopShell == "plasma";
+  wallpaper = ../../../assets/wallpapers/${config.may.desktop.wallpaper or "generic"}-wallpaper.png;
 in {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf enable {
     home.packages = with pkgs; [
       ((catppuccin-kde
         .overrideAttrs (finalAttrs: prevAttrs: {

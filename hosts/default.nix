@@ -42,12 +42,15 @@
         class = "nixos";
         modules = [
           inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+          inputs.noctalia.nixosModules.default
           homeManagerOpts
           {
             home-manager.useGlobalPkgs = true;
             home-manager.sharedModules = [
-              inputs.plasma-manager.homeModules.plasma-manager
-              inputs.self.homeModules.plasma
+              # inputs.plasma-manager.homeModules.plasma-manager
+              # inputs.self.homeModules.plasma
+              inputs.noctalia.homeModules.default
+              inputs.self.homeModules.noctalia
             ];
           }
         ];

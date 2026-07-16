@@ -68,6 +68,7 @@ packages = []
 class = "nixos"
 homeConfig = true
 personal = true
+desktopShell = "noctalia"
 
 features = [
   "desktop",
@@ -86,7 +87,7 @@ packages = [
   "xivlauncher"
 ]
 
-[hosts.magnezone.plasma]
+[hosts.magnezone.desktop]
 launcherIcon = "nix-snowflake"
 wallpaper = "magnezone"
 
@@ -128,7 +129,7 @@ programs = []
 services = []
 packages = []
 
-[hosts.duosion.plasma]
+[hosts.duosion.desktop]
 launcherIcon = "org.cachyos.hello"
 wallpaper = "duosion"
 

@@ -1,7 +1,7 @@
 { pkgs, config, inputs, lib, ... }:
 
 let
-  cfg = config.may.features.desktop;
+  enable = config.may.features.desktop.enable && config.may.desktopShell == "plasma";
   widgets = {
     battery = {
       battery = {
@@ -59,7 +59,7 @@ let
     kickoff = {
       kickoff = {
         sortAlphabetically = true;
-        icon = config.may.plasma.launcherIcon;
+        icon = config.may.desktop.launcherIcon;
       };
     };
 
@@ -97,7 +97,7 @@ let
     };
   };
 in {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf enable {
     # TODO remove this after the bug gets fixed
     # https://github.com/nix-community/plasma-manager/issues/577
     # programs.plasma.startup.desktopScript."panels".preCommands = lib.mkForce ''

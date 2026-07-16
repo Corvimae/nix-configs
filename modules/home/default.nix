@@ -7,6 +7,7 @@
     services = import ./services;
     features = import ./features;
     plasma = import ./plasma;
+    noctalia = import ./noctalia;
     xdg = import ./xdg.nix;
     sharedHomeModules = flake-parts-lib.importApply ./shared-home-modules.nix { inherit inputs; };
   };

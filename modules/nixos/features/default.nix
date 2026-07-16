@@ -10,5 +10,7 @@
   imports = [
     ./desktop.nix
     ./laptop.nix
+    ./shells/plasma.nix
+    ./shells/noctalia.nix
   ];
 }

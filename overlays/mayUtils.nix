@@ -123,7 +123,8 @@ final: prev: {
 
         homeConfig = lib.attrsets.attrByPath ["homeConfig"] false config;
         personal = lib.attrsets.attrByPath ["personal"] false config;
-        plasma = lib.attrsets.attrByPath ["plasma"] {} config;
+        desktopShell = lib.attrsets.attrByPath ["desktopShell"] "plasma" config;
+        desktop = lib.attrsets.attrByPath ["desktop"] {} config;
 
         features = hydrateOptionSet mergedOptions.features;
         programs = hydrateOptionSet mergedOptions.programs;
@@ -154,7 +155,13 @@ final: prev: {
         description = "Whether this is a personal device (as opposed to a work device).";
       };
 
-      plasma = {
+      desktopShell = lib.mkOption {
+        type = lib.types.str;
+        description = "The desktop shell to use.";
+        default = "plasma";
+      };
+
+      desktop = {
         launcherIcon = lib.mkOption {
           type = lib.types.str;
           description = "The icon to use for the application launcher in Plasma desktop.";

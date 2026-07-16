@@ -2,14 +2,14 @@
 
 let 
   homeDirectory = config.home.homeDirectory;
-  desktopCfg = config.may.features.desktop;
+  isPlasma = config.may.features.desktop.enable && config.may.desktopShell == "plasma";
 in {
   xdg = {
     enable = true;
     configHome = lib.mkForce "${homeDirectory}/.config";
     dataHome = lib.mkForce "${homeDirectory}/.local/share";
     
-    portal = lib.mkIf desktopCfg.enable {
+    portal = lib.mkIf isPlasma {
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = [
