@@ -9,6 +9,7 @@
     ./firefox
     ./ghostty
     ./iterm
+    ./omniwm
     ./vscode
     ./git.nix
     ./misc.nix

@@ -69,51 +69,51 @@ in {
         cmd = "hl.dsp.window.close()";
       }
       {
-        key = "left";
+        key = "j";
         cmd = "hl.dsp.focus({ direction = \"left\" })";
       }
       {
-        key = "right";
+        key = "l";
         cmd = "hl.dsp.focus({ direction = \"right\" })";
       }
       {
-        key = "ALT + up";
+        key = "ALT + i";
         cmd = "hl.dsp.focus({ direction = \"up\" })";
       }
       {
-        key = "ALT + down";
+        key = "ALT + k";
         cmd = "hl.dsp.focus({ direction = \"down\" })";
       }
       {
-        key = "SHIFT + left";
+        key = "SHIFT + j";
         cmd = "hl.dsp.window.move({ direction = \"left\" })";
       }
       {
-        key = "SHIFT + right";
+        key = "SHIFT + l";
         cmd = "hl.dsp.window.move({ direction = \"right\" })";
       }
       {
-        key = "ALT + SHIFT + up";
+        key = "ALT + SHIFT + i";
         cmd = "hl.dsp.window.move({ direction = \"up\" })";
       }
       {
-        key = "ALT + SHIFT + down";
+        key = "ALT + SHIFT + k";
         cmd = "hl.dsp.window.move({ direction = \"down\" })";
       }
       {
-        key = "up";
+        key = "i";
         cmd = "hl.dsp.focus({ workspace = \"-1\" })";
       }
       {
-        key = "down";
+        key = "k";
         cmd = "hl.dsp.focus({ workspace = \"+1\" })";
       }
       {
-        key = "SHIFT + up";
+        key = "SHIFT + i";
         cmd = "hl.dsp.window.move({ workspace = \"-1\" })";
       }
       {
-        key = "SHIFT + down";
+        key = "SHIFT + k";
         cmd = "hl.dsp.window.move({ workspace = \"+1\" })";
       }
       {

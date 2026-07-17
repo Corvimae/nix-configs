@@ -102,7 +102,9 @@ features = [
 ]
 
 programs = [
-  "iterm"
+  "iterm",
+  "omniwm",
+  "ghostty"
 ]
 
 packages = [

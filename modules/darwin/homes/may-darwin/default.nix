@@ -2,7 +2,7 @@
 
 {
   # home-manager.backupFileExtension = "hm-backup";
-  home-manager.backupCommand = "trash";
+  home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash";
   home-manager.users.may-darwin = {
     imports = [
       inputs.self.homeModules.sharedHomeModules

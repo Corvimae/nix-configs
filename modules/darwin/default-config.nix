@@ -10,8 +10,21 @@
   system.stateVersion = 6;
   system.primaryUser = "may";
 
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+      "pipe-operators"
+    ];
+  };
+  
   nixpkgs = {
     config.allowUnfree = true;
+    
+    # attempt to remove this when whatever is still using 40.10.5 updates
+    config.permittedInsecurePackages = [
+      "electron-40.10.5"
+    ];
 
     # Very annoying that you need to redefine this here :(
     overlays = [
