@@ -55,8 +55,8 @@ defaultLayoutType = "niri"
 hotkeysEnabled = true
 ipcEnabled = false
 preventSleepEnabled = false
-systemHyperTrigger = "None"
 updateChecksEnabled = true
+systemHyperTrigger = "None"
 
 [gestures]
 fingerCount = 3
@@ -400,21 +400,21 @@ binding = "Unassigned"
 id = "moveColumnToWorkspace.8"
 
 [[hotkeys]]
-binding = "Option+Shift+Left Arrow"
+binding = "Option+Shift+J"
 id = "move.left"
 
 [[hotkeys]]
-binding = "Option+Shift+Command+Down Arrow"
+binding = "Option+Shift+Command+K"
 id = "move.down"
 
 [[hotkeys]]
-binding = "Option+Shift+Command+Up Arrow"
+binding = "Option+Shift+Command+I"
 id = "move.up"
 
 [[hotkeys]]
-binding = "Option+Shift+Right Arrow"
-id = "move.right"
+binding = "Option+Shift+L"
 
+id = "move.right"
 [[hotkeys]]
 binding = "Unassigned"
 id = "moveWindowDown"
@@ -788,7 +788,7 @@ binding = "Option+Grave"
 id = "toggleQuakeTerminal"
 
 [[hotkeys]]
-binding = "Option+Shift+L"
+binding = "Unassigned"
 id = "toggleWorkspaceLayout"
 
 [[hotkeys]]
