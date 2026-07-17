@@ -17,14 +17,12 @@ in {
     inherit pkgs;
 
     modules = [
-      inputs.plasma-manager.homeModules.plasma-manager
       {
         may = pkgs.mayUtils.loadConfig "duosion" ../../config.toml;
       }
       inputs.self.homeModules.programs
       inputs.self.homeModules.services
       # inputs.self.homeModules.xdg
-      inputs.self.homeModules.plasma
       ./pipewire.nix
       {
         home.username = "may";
