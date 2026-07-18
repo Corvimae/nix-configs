@@ -654,7 +654,7 @@ binding = "Control+Option+R"
 id = "resetWindowHeight"
 
 [[hotkeys]]
-binding = "Option+Minus"
+binding = "Unassigned"
 id = "setColumnWidth.decrease10Percent"
 
 [[hotkeys]]
@@ -670,11 +670,11 @@ binding = "Unassigned"
 id = "setWindowWidth.increase10Percent"
 
 [[hotkeys]]
-binding = "Option+Shift+Minus"
+binding = "Unassigned"
 id = "setWindowHeight.decrease10Percent"
 
 [[hotkeys]]
-binding = "Option+Shift+Equal"
+binding = "Unassigned"
 id = "setWindowHeight.increase10Percent"
 
 [[hotkeys]]
