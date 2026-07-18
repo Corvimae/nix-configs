@@ -55,8 +55,8 @@ defaultLayoutType = "niri"
 hotkeysEnabled = true
 ipcEnabled = false
 preventSleepEnabled = false
-updateChecksEnabled = true
 systemHyperTrigger = "None"
+updateChecksEnabled = true
 
 [gestures]
 fingerCount = 3
@@ -202,6 +202,12 @@ initialColumnWidth = 1.0
 bundleId = "com.apple.finder"
 id = "33B8A14F-B4EE-47E6-9770-1E72D9488D3A"
 layout = "float"
+
+[[appRules]]
+bundleId = "org.nixos.firefox"
+id = "8B5879E0-E447-45D0-9893-D345390F167D"
+layout = "float"
+titleSubstring = "Extension:"
 
 [[hotkeys]]
 binding = "Option+1"
@@ -413,8 +419,8 @@ id = "move.up"
 
 [[hotkeys]]
 binding = "Option+Shift+L"
-
 id = "move.right"
+
 [[hotkeys]]
 binding = "Unassigned"
 id = "moveWindowDown"
