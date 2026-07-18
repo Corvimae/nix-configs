@@ -120,6 +120,7 @@ packages = [
 class = "standalone"
 homeConfig = true
 personal = true
+desktopShell = "noctalia"
 
 features = [
   "desktop",

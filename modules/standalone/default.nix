@@ -16,12 +16,15 @@ in {
   flake.homeConfigurations."duosion.may" = inputs.home-manager.lib.homeManagerConfiguration {
     inherit pkgs;
 
+    extraSpecialArgs = { inherit inputs; };
     modules = [
       {
         may = pkgs.mayUtils.loadConfig "duosion" ../../config.toml;
       }
       inputs.self.homeModules.programs
       inputs.self.homeModules.services
+      inputs.noctalia.homeModules.default
+      inputs.self.homeModules.noctalia
       # inputs.self.homeModules.xdg
       ./pipewire.nix
       {

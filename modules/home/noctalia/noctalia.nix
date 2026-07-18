@@ -3,12 +3,8 @@
 let 
   enable = config.may.features.desktop.enable && config.may.desktopShell == "noctalia";
   wallpaper = ../../../assets/wallpapers/${config.may.desktop.wallpaper or "generic"}-wallpaper.png;
-  wallpaperLocation = "${config.home.homeDirectory}/Pictures/wallpaper.png";
+  wallpaperLocation = "${config.home.homeDirectory}/Pictures/Wallpapers/wallpaper.png";
 in {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
-  
   config = lib.mkIf enable {
     home.file.${wallpaperLocation} = {
       source = wallpaper;
@@ -94,7 +90,7 @@ in {
 
           start = [
             "launcher"
-            "workspace"
+            "workspaces"
           ];
 
           thickness = 30;

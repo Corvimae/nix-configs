@@ -4,10 +4,6 @@ let
   enable = config.may.features.desktop.enable && config.may.desktopShell == "plasma";
   wallpaper = ../../../assets/wallpapers/${config.may.desktop.wallpaper or "generic"}-wallpaper.png;
 in {
-  imports = [
-    inputs.plasma-manager.homeModules.plasma-manager
-  ];
-
   config = lib.mkIf enable {
     home.packages = with pkgs; [
       ((catppuccin-kde
