@@ -22,8 +22,10 @@ in {
         config = {
           general = {
             layout = "scrolling";
-            gaps_in = 5;
-            gaps_out = 10;
+            gaps_in = 3;
+            gaps_out = 6;
+            resize_on_border = true;
+            hover_icon_on_border = true;
           };
 
           decoration = {
@@ -41,6 +43,10 @@ in {
               passes = 2;
               vibrancy = 0.1696;
             };
+          };
+
+          input = {
+            follow_mouse = 0;
           };
           
           # plugin = {

@@ -19,6 +19,10 @@ in {
           content = ./lua/layoutSwitching.lua;
           autoLoad = true;
         };
+        "titleFloatRules.lua" = {
+          content = ./lua/titleFloatRules.lua;
+          autoLoad = true;
+        };
       };
 
       # Load monitors.lua as generated from monique if it is present
