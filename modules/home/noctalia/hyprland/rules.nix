@@ -2,6 +2,14 @@
 
 let
   enable = pkgs.mayUtils.isDesktopShell "noctalia" config;
+  mkCenterFloatRule = { match, pctSize, ... }@rules: (builtins.removeAttrs rules ["pctSize"]) // {
+    float = true;
+    center = true;
+    size = [
+      "monitor_w * ${lib.strings.floatToString(pctSize.x)}"
+      "monitor_h * ${lib.strings.floatToString(pctSize.y)}"
+    ];
+  };
 in {
   config = lib.mkIf enable {
     wayland.windowManager.hyprland.settings = {
@@ -20,6 +28,40 @@ in {
           float = true;
           size = [1080 800];
         }
+        (mkCenterFloatRule {
+          match.class = "io.missioncenter.MissionCenter";
+          pctSize = {
+            x = 0.5;
+            y = 0.7;
+          };
+        })
+        (mkCenterFloatRule {
+          match.class = "XIVLauncher.Core";
+          pctSize = {
+            x = 0.5;
+            y = 0.6;
+          };
+        })
+        (mkCenterFloatRule {
+          match.class = "FF Logs Uploader";
+          pctSize = {
+            x = 0.5;
+            y = 0.6;
+          };
+        })
+        {
+          match.class = "cc3dsfs_bot.*";
+          # workspace = 6;
+          tile = true;
+        }
+        {
+          match.class = "cc3dsfs_top.*";
+          # workspace = 6;
+          tile = true;
+        }       
+        # (mkCenterFloatRule {
+        #   match.class = ""
+        # })
         # {
         #   match.float = false;
         #   "hyprbars:enabled" = false;

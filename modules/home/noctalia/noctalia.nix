@@ -15,6 +15,7 @@ in {
       satty
       slurp
       wl-clipboard
+      mission-center
       may.future-cyan-hyprcursor
     ];
 
@@ -23,7 +24,7 @@ in {
 
       systemd.enable = true;
 
-      settings = { # This may also be a string or path to a .toml file.
+      settings = {
         theme = {
           mode = "light";
           source = "community";
@@ -118,13 +119,14 @@ in {
       };
     };
 
-    home.activation = {
-      syncGreeter = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        export PATH="${
-          lib.makeBinPath ([  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default ])
-        }:$PATH"
-        noctalia msg greeter-sync
-      '';
-    };
+    # requires password every time, not worth it.
+    # home.activation = {
+    #   syncGreeter = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    #     export PATH="${
+    #       lib.makeBinPath ([  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default ])
+    #     }:$PATH"
+    #     noctalia msg greeter-sync
+    #   '';
+    # };
   };
 }

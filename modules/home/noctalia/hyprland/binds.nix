@@ -15,7 +15,7 @@ let
   hyprBindNoctalia = { cmd, ... }@args: hyprBindExec(args // {
     cmd = "noctalia msg ${cmd}";
   });
-  toHyprBind = args: {
+  mkHyprBind = args: {
     cmd = hyprBind;
     exec = hyprBindExec;
     noctalia = hyprBindNoctalia;
@@ -56,6 +56,12 @@ in {
         type = "exec";
         key = "ALT + CTRL + SHIFT + 4";
         cmd = "grim -g \\\"$(slurp -d)\\\" - | wl-copy";
+        noModKey = true;
+      }
+      {
+        type = "exec";
+        key = "CTRL + SHIFT + Escape";
+        cmd = "missioncenter";
         noModKey = true;
       }
 
@@ -197,6 +203,6 @@ in {
         noModKey = true;
         type = "noctalia";
       }
-    ] |> builtins.map(toHyprBind);
+    ] |> builtins.map(mkHyprBind);
   };
 }
