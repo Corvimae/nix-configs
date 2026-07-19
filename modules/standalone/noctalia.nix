@@ -6,6 +6,7 @@ in {
   config = lib.mkIf enable {
     programs.noctalia.settings = {
       dock.monitors = [ "DP-2" ];
+      widget.battery.enabled = false;
     };
   }
 }

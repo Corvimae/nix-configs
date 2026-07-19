@@ -77,6 +77,7 @@ in {
         bar.default = {
           end = [
             "tray"
+            "privacy"
             "notifications"
             "clipboard"
             "bluetooth"
@@ -85,12 +86,15 @@ in {
             "brightness"
             "battery"
             "control-center"
+            "settings"
             "session"
           ];
 
           start = [
-            "launcher"
             "workspaces"
+            "cpu"
+            "ram"
+            "sysmon"
           ];
 
           thickness = 30;
@@ -104,6 +108,12 @@ in {
           volume.show_label = false;
           network.show_label = false;
           clock.format = "%l:%M %P";
+          cpu.display = "text";
+          ram.display = "text";
+          sysmon = {
+            display = "text";
+            stat = "disk_pct";
+          };
         };
       };
     };

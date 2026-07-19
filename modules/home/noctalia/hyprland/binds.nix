@@ -191,6 +191,12 @@ in {
         noModKey = true;
         type = "noctalia";
       }
+      {
+        key = "CTRL + ALT + q";
+        cmd = "session lock";
+        noModKey = true;
+        type = "noctalia";
+      }
     ] |> builtins.map(toHyprBind);
   };
 }
