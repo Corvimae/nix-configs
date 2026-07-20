@@ -27,6 +27,7 @@ in {
       inputs.self.homeModules.noctalia
       # inputs.self.homeModules.xdg
       ./pipewire.nix
+      ./noctalia.nix
       {
         home.username = "may";
         home.homeDirectory = "/home/may";
