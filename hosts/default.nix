@@ -64,6 +64,14 @@
         ];
       };
 
+      Carbink = {
+        arch = "aarch64";
+        class = "darwin";
+        modules = [
+          homeManagerOpts
+        ];
+      };
+
       tinkaton = {
         arch = "x86_64";
         class = "nixos";

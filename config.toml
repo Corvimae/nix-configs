@@ -116,6 +116,24 @@ packages = [
   "teleport"
 ]
 
+[hosts.Carbink] # work macbook pro
+class = "darwin"
+homeConfig = true
+personal = false
+
+features = [
+  "developer",
+  "desktop-darwin"
+]
+
+programs = [
+  "iterm",
+  "omniwm",
+  "ghostty"
+]
+
+packages = []
+
 [hosts.duosion] # personal cachyos desktop
 class = "standalone"
 homeConfig = true
