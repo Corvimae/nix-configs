@@ -61,6 +61,13 @@ packages = []
 [features.fonts]
 packages = []
 
+# defined but not currently used. needs to be specified somewhere
+# or else evaluation fails.
+[features.disabled]
+programs = [
+  "omniwm"
+]
+
 # ---------------
 # --   HOSTS   --
 # ---------------

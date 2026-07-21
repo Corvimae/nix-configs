@@ -1,4 +1,4 @@
-{ lib, inputs, ... }:
+{ lib, inputs, pkgs, ... }:
 
 {
   imports = [
@@ -17,7 +17,7 @@
       "pipe-operators"
     ];
   };
-  
+
   nixpkgs = {
     config.allowUnfree = true;
     
@@ -35,4 +35,20 @@
       (final: prev: { may = inputs.self.packages.${prev.system}; })  
     ];
   };
+
+  networking = {
+    knownNetworkServices = [
+      "Wi-Fi"
+      "USB 10/100/1000 LAN"
+      "Thunderbolt Bridge"
+    ];
+    dns = [
+      "10.0.1.11"
+      "1.1.1.1"
+    ];
+  };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
 }

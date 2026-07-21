@@ -4,6 +4,10 @@
       "com.apple.mouse.scaling" = -1.0; # Disable mouse acceleration
     };
 
+    dock = {
+      show-recents = false;
+    };
+
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
       AppleShowAllFiles = true;
@@ -14,11 +18,16 @@
       NSAutomaticCapitalizationEnabled = false; # Disable automatic capitalization
       NSAutomaticSpellingCorrectionEnabled = false; # Disable automatic spelling correction
       ApplePressAndHoldEnabled = false; # Repeat letters on press-and-hold
+      NSNavPanelExpandedStateForSaveMode = true; # Expand save panel by default
+      NSNavPanelExpandedStateForSaveMode2 = true; # Twice, for some reason.
       "com.apple.swipescrolldirection" = false; # Disable natural scrolling
     };
     
     finder = {
       FXPreferredViewStyle = "clmv"; # Default to column view
+      FXDefaultSearchScope = "SCcf"; # Search current folder by default
+      FXEnableExtensionChangeWarning = false; # Disable file extension change warning
+      ShowPathbar = true;
     };
 
     # Additional options that are not yet explicitly defined in nix-darwin
