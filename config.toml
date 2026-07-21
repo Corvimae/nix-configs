@@ -103,7 +103,7 @@ features = [
 
 programs = [
   "iterm",
-  "omniwm",
+  # "omniwm",
   "ghostty"
 ]
 
@@ -128,7 +128,7 @@ features = [
 
 programs = [
   "iterm",
-  "omniwm",
+  # "omniwm",
   "ghostty"
 ]
 
