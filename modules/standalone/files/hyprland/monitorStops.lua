@@ -1,5 +1,3 @@
--- doesn't currently work
-
 local function trace (text)
 	hl.notification.create({ text = text, duration = 10000 })
 end

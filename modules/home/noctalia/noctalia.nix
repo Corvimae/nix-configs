@@ -116,6 +116,12 @@ in {
             stat = "disk_pct";
           };
         };
+
+        idle.behavior.screen-off = {
+          enabled = true;
+          timeout = 900; # 15 minutes
+          action = "screen_off";
+        };
       };
     };
 
