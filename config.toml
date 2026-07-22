@@ -134,12 +134,15 @@ features = [
 ]
 
 programs = [
+  "devenv",
   "iterm",
   # "omniwm",
   "ghostty"
 ]
 
-packages = []
+packages = [
+  "gh"
+]
 
 [hosts.duosion] # personal cachyos desktop
 class = "standalone"

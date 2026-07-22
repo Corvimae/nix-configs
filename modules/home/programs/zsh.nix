@@ -19,6 +19,11 @@ in {
     syntaxHighlighting.enable = true;
 
     dotDir = lib.mkDefault "${config.xdg.configHome}/zsh";
+    initContent = lib.mkAfter ''
+      # Source local zshrc file if it exists
+      FILE=~/.zshrc.local && test -f $FILE && source $FILE
+    '';
+
     oh-my-zsh = {
       enable = true;
       plugins = [
