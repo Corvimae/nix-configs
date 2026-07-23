@@ -16,8 +16,8 @@ in {
       profiles.may = {
         id = 0;
         name = "May";
-        extensions = lib.mkDefault {
-          packages = (pkgs.mayUtils.mkConditionalList (
+        extensions = {
+          packages = lib.mkBefore (pkgs.mayUtils.mkConditionalList (
             with pkgs.firefoxAddons; [
               { value = ublock-origin; }
               { value = bitwarden-password-manager; }
