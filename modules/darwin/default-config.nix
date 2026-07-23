@@ -16,6 +16,12 @@
       "flakes"
       "pipe-operators"
     ];
+
+    trusted-users = [
+      "root"
+      "may"
+      "@wheel"
+    ];
   };
 
   nixpkgs = {
