@@ -62,6 +62,11 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    scopebuddy = {
+      url = "github:HikariKnight/ScopeBuddy";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -102,6 +107,7 @@
             inputs.nix-vscode-extensions.overlays.default
             inputs.self.overlays.mayUtils
             inputs.self.overlays.pipewireUtils
+            inputs.self.overlays.hyprUtils
             # my packages
             (final: prev: { may = inputs.self.packages.${prev.system}; })
           ];

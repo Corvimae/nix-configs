@@ -6,6 +6,7 @@
       inputs.nix-vscode-extensions.overlays.default
       inputs.self.overlays.mayUtils
       inputs.self.overlays.pipewireUtils
+      inputs.self.overlays.hyprUtils
       (final: prev: { may = inputs.self.packages.${prev.system}; })
     ];
     config.allowUnfree = true;
@@ -29,6 +30,23 @@ in {
       ./pipewire.nix
       ./noctalia.nix
       {
+        nix = {
+          package = pkgs.nix;
+          settings = {
+            experimental-features = [
+              "nix-command"
+              "flakes"
+              "pipe-operators"
+            ];
+
+            trusted-users = [
+              "root"
+              "may"
+              "@wheel"
+            ];
+          };
+        };
+
         home.username = "may";
         home.homeDirectory = "/home/may";
         home.stateVersion = "25.11";
@@ -42,8 +60,8 @@ in {
         programs.ghostty.systemd.enable = lib.mkForce false;
 
         programs.zsh.shellAliases = {
-          renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may --extra-experimental-features 'nix-command flakes pipe-operators' -b backup";
-          nix-upgrade = "cd ~/.config/nix-configs && nix flake update --extra-experimental-features \"nix-command flakes\" && renix";
+          renix = "home-manager switch --flake ~/.config/nix-configs#duosion.may -b backup";
+          nix-upgrade = "cd ~/.config/nix-configs && nix flake update && renix";
           nix-deploy = "nix run github:serokell/deploy-rs ~/.config/nix-configs";
 
           # Flip QK75N into treating FN keys normal-style

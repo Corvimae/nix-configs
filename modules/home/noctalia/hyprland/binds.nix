@@ -2,24 +2,6 @@
 
 let
   enable = pkgs.mayUtils.isDesktopShell "noctalia" config;
-  modKey = "SUPER";
-  hyprBind = { key, cmd, ... }@args: {
-    _args = [
-      (if (args.noModKey or false) then key else "${modKey} + ${key}")
-      (lib.generators.mkLuaInline cmd)
-    ] ++ (args.opts or []);
-  };
-  hyprBindExec = { cmd, ... }@args: hyprBind (args // {
-    cmd = "hl.dsp.exec_cmd(\"${cmd}\")";
-  });
-  hyprBindNoctalia = { cmd, ... }@args: hyprBindExec(args // {
-    cmd = "noctalia msg ${cmd}";
-  });
-  mkHyprBind = args: {
-    cmd = hyprBind;
-    exec = hyprBindExec;
-    noctalia = hyprBindNoctalia;
-  }.${args.type or "cmd"} args;
 in {
   config = lib.mkIf enable {
     wayland.windowManager.hyprland.settings.bind = let
@@ -203,6 +185,6 @@ in {
         noModKey = true;
         type = "noctalia";
       }
-    ] |> builtins.map(mkHyprBind);
+    ] |> builtins.map(pkgs.hyprUtils.mkHyprBind);
   };
 }

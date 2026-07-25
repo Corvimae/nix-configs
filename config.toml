@@ -158,7 +158,9 @@ features = [
 
 programs = []
 services = []
-packages = []
+packages = [
+  "bitwarden-cli"
+]
 
 [hosts.duosion.desktop]
 launcherIcon = "org.cachyos.hello"

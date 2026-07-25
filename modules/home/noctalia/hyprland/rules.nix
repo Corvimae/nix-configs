@@ -2,18 +2,10 @@
 
 let
   enable = pkgs.mayUtils.isDesktopShell "noctalia" config;
-  mkCenterFloatRule = { match, pctSize, ... }@rules: (builtins.removeAttrs rules ["pctSize"]) // {
-    float = true;
-    center = true;
-    size = [
-      "monitor_w * ${lib.strings.floatToString(pctSize.x)}"
-      "monitor_h * ${lib.strings.floatToString(pctSize.y)}"
-    ];
-  };
 in {
   config = lib.mkIf enable {
     wayland.windowManager.hyprland.settings = {
-      window_rule = [
+      window_rule = with pkgs.hyprUtils; [
         # {
         #   match.fullscreen = false;
         #   float = true;
@@ -49,6 +41,13 @@ in {
             y = 0.6;
           };
         })
+        (mkCenterFloatRule {
+          match.title = "Steam Settings";
+          pctSize = {
+            x = 0.5;
+            y = 0.6;
+          };
+        })
         {
           match.class = "cc3dsfs_bot.*";
           # workspace = 6;
@@ -58,7 +57,18 @@ in {
           match.class = "cc3dsfs_top.*";
           # workspace = 6;
           tile = true;
-        }       
+        }
+        {
+          match.class = "gamescope";
+          fullscreen = true;
+          workspace = "name:Fullscreen";
+          immediate = true;
+        }
+        {
+          match.fullscreen = true;
+          workspace = "name:Fullscreen";
+          immediate = true;
+        }
         # (mkCenterFloatRule {
         #   match.class = ""
         # })

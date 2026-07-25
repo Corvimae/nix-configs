@@ -59,19 +59,15 @@ in {
           # };
         };
 
-        env = [
-          {
-            _args = [
-              "HYPRCURSOR_THEME"
-              "Future-Cyan-Hyprcursor_Theme"
-            ];
-          }
-          {
-            _args = [
-              "HYPRCURSOR_SIZE"
-              "32"
-            ];
-          }
+        env = with pkgs.hyprUtils; [
+          (mkEnv {
+            key = "HYPRCURSOR_THEME";
+            value = "Future-Cyan-Hyprcursor_Theme";
+          })
+          (mkEnv {
+            key = "HYPRCURSOR_SIZE";
+            value = "32";
+          })
         ];
 
         animation = [

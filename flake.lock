@@ -815,7 +815,28 @@
         "nixpkgs": "nixpkgs_5",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "scopebuddy": "scopebuddy"
+      }
+    },
+    "scopebuddy": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784658606,
+        "narHash": "sha256-zFq70LvuZIpko7EmY56dEVt2X01+gutaIZFT/e9P4Hw=",
+        "owner": "HikariKnight",
+        "repo": "ScopeBuddy",
+        "rev": "86f03ce8b7c528edede1cab58a8f8cf111644792",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HikariKnight",
+        "repo": "ScopeBuddy",
+        "type": "github"
       }
     },
     "systems": {
