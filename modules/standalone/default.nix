@@ -1,14 +1,7 @@
 { inputs, lib, config, ... }: let
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
-    overlays = [
-      inputs.nix-firefox-addons.overlays.default
-      inputs.nix-vscode-extensions.overlays.default
-      inputs.self.overlays.mayUtils
-      inputs.self.overlays.pipewireUtils
-      inputs.self.overlays.hyprUtils
-      (final: prev: { may = inputs.self.packages.${prev.system}; })
-    ];
+    overlays = inputs.self.allOverlays;
     config.allowUnfree = true;
   };
 in {

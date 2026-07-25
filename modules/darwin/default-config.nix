@@ -33,13 +33,7 @@
     ];
 
     # Very annoying that you need to redefine this here :(
-    overlays = [
-      inputs.self.overlays.mayUtils
-      inputs.nix-firefox-addons.overlays.default
-      inputs.nix-vscode-extensions.overlays.default
-      # my packages
-      (final: prev: { may = inputs.self.packages.${prev.system}; })  
-    ];
+    overlays = inputs.self.allOverlays;
   };
 
   networking = {

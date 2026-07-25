@@ -1,7 +1,9 @@
+{ flake-parts-lib, ... }:
+
 {
-  flake.overlays = {
-    mayUtils = import ./mayUtils.nix;
-    pipewireUtils = import ./pipewireUtils.nix;
-    hyprUtils = import ./hyprUtils.nix;
-  };
+  flake.customOverlays = [
+    ./mayUtils.nix
+    ./pipewireUtils.nix
+    ./hyprUtils.nix
+  ] |> builtins.map(import);
 }

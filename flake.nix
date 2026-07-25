@@ -96,21 +96,20 @@
         ./overlays
       ];
 
+      flake.allOverlays = [
+        inputs.nix-firefox-addons.overlays.default
+        inputs.nix-vscode-extensions.overlays.default
+        # my packages
+        (final: prev: { may = inputs.self.packages.${prev.system}; })
+      ] ++ inputs.self.customOverlays;
+
       perSystem = { system, ... }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
           # If you're adding overlays and they're being used in shared or nix-darwin modules,
           # you need to add the overlay in modules/darwin/default-config.nix and
           # modules/nixos/default-config/nixSettings.nix as well.
-          overlays = [
-            inputs.nix-firefox-addons.overlays.default
-            inputs.nix-vscode-extensions.overlays.default
-            inputs.self.overlays.mayUtils
-            inputs.self.overlays.pipewireUtils
-            inputs.self.overlays.hyprUtils
-            # my packages
-            (final: prev: { may = inputs.self.packages.${prev.system}; })
-          ];
+          overlays = inputs.self.allOverlays;
           config.allowUnfree = true;
         };
       };

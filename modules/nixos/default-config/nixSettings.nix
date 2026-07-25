@@ -2,12 +2,7 @@
 
 {
   nixpkgs = {
-    overlays = [
-      inputs.nix-firefox-addons.overlays.default
-      inputs.nix-vscode-extensions.overlays.default
-      inputs.self.overlays.mayUtils
-      (final: prev: { may = inputs.self.packages.${prev.system}; })
-    ];
+    overlays = inputs.self.allOverlays;
     config.allowUnfree = true;
 
     # attempt to remove this when whatever is still using 40.10.5 updates
