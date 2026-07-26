@@ -48,6 +48,16 @@ in {
             y = 0.6;
           };
         })
+        (mkCenterFloatRule {
+          match = {
+            class = "org.mozilla.Thunderbird";
+            initial_title = "Calendar Reminders";
+          };
+          pctSize = {
+            x = 0.5;
+            y = 0.4;
+          };
+        })
         {
           match.class = "cc3dsfs_bot.*";
           # workspace = 6;
