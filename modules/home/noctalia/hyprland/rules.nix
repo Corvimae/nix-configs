@@ -54,7 +54,7 @@ in {
             initial_title = "Calendar Reminders";
           };
           pctSize = {
-            x = 0.5;
+            x = 0.3;
             y = 0.4;
           };
         })
@@ -79,6 +79,16 @@ in {
           workspace = "name:Fullscreen";
           immediate = true;
         }
+        (mkCenterFloatRule {
+          match = {
+            initial_class = "X-AIR-Edit";
+            initial_title = "negative:X AIR Edit.*";
+          };
+          pctSize = {
+            x = 0.3;
+            y = 0.4;
+          };
+        })
         # (mkCenterFloatRule {
         #   match.class = ""
         # })
