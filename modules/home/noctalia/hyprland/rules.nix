@@ -79,6 +79,11 @@ in {
           workspace = "name:Fullscreen";
           immediate = true;
         }
+        {
+          match.class = "ffxiv_dx11.exe";
+          workspace = "name:Fullscreen";
+          immediate = true;
+        }
         (mkCenterFloatRule {
           match = {
             initial_class = "X-AIR-Edit";
