@@ -105,6 +105,10 @@ in {
         cmd = "hl.dsp.window.move({ workspace = \"+1\" })";
       }
       {
+        key = "SHIFT + f";
+        cmd = "hl.dsp.window.fullscreen({ action = \"toggle\" })";
+      }
+      {
         key = "bracketleft";
         cmd = "hl.dsp.layout(\"colresize 0.5\")";
       }
@@ -122,7 +126,15 @@ in {
       }
       {
         key = "mouse:272";
-        cmd = "hl.dsp.window.drag()";
+        cmd = ''
+          function()
+            local window = hl.get_active_window()
+
+            if window.fullscreen == 0 then
+              hl.dispatch(hl.dsp.window.drag())
+            end
+          end
+        '';
         opts = [{ mouse = true; }];
       }
       {

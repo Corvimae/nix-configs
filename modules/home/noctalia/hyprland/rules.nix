@@ -2,6 +2,11 @@
 
 let
   enable = pkgs.mayUtils.isDesktopShell "noctalia" config;
+  mkFullscreenRule = rules: {
+    fullscreen = true;
+    workspace = "name:Fullscreen";
+    immediate = true;
+  } // rules;
 in {
   config = lib.mkIf enable {
     wayland.windowManager.hyprland.settings = {
@@ -68,22 +73,17 @@ in {
           # workspace = 6;
           tile = true;
         }
-        {
+        (mkFullscreenRule {
           match.class = "gamescope";
-          fullscreen = true;
-          workspace = "name:Fullscreen";
-          immediate = true;
-        }
+        })
         {
           match.fullscreen = true;
           workspace = "name:Fullscreen";
           immediate = true;
         }
-        {
+        (mkFullscreenRule {
           match.class = "ffxiv_dx11.exe";
-          workspace = "name:Fullscreen";
-          immediate = true;
-        }
+        })
         (mkCenterFloatRule {
           match = {
             initial_class = "X-AIR-Edit";
