@@ -76,13 +76,11 @@ in {
         (mkFullscreenRule {
           match.class = "gamescope";
         })
-        {
-          match.fullscreen = true;
-          workspace = "name:Fullscreen";
-          immediate = true;
-        }
         (mkFullscreenRule {
-          match.class = "ffxiv_dx11.exe";
+          match.fullscreen = true;
+        })
+        (mkFullscreenRule {
+          match.title = "FINAL FANTASY XIV";
         })
         (mkCenterFloatRule {
           match = {
