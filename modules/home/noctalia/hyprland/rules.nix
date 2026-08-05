@@ -5,6 +5,7 @@ let
   mkFullscreenRule = rules: {
     fullscreen = true;
     workspace = "name:Fullscreen";
+    confine_pointer = true;
     immediate = true;
   } // rules;
 in {
