@@ -7,6 +7,7 @@ let
     workspace = "name:Fullscreen";
     confine_pointer = true;
     immediate = true;
+    render_unfocused = true;
   } // rules;
 in {
   config = lib.mkIf enable {
