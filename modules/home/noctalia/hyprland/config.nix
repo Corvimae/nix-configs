@@ -50,6 +50,10 @@ in {
             follow_mouse = 0;
           };
           
+          misc = {
+            disable_hyprland_logo = true;
+            vrr = 1;
+          };
           # plugin = {
           #   hyprbars = {
           #     bar_height = 20;

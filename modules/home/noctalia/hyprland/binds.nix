@@ -117,6 +117,10 @@ in {
         cmd = "hl.dsp.layout(\"colresize 1.0\")";
       }
       {
+        key = "backslash";
+        cmd = "hl.dsp.layout(\"promote\")";
+      }
+      {
         key = "equal";
         cmd = "hl.dsp.layout(\"colresize +0.1\")";
       }
