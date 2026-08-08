@@ -158,26 +158,31 @@ in {
         key = "XF86AudioRaiseVolume";
         cmd = "volume-up";
         type = "noctalia";
+        noModKey = true;
       }
       {
         key = "XF86AudioLowerVolume";
         cmd = "volume-down";
         type = "noctalia";
+        noModKey = true;
       }
       {
         key = "XF86AudioMute";
         cmd = "volume-mute";
         type = "noctalia";
+        noModKey = true;
       }
       {
         key = "XF86MonBrightnessUp";
         cmd = "brightness-up";
         type = "noctalia";
+        noModKey = true;
       }
       {
         key = "XF86MonBrightnessDown";
         cmd = "brightness-down";
         type = "noctalia";
+        noModKey = true;
       }
       {
         key = "ALT + Tab";
