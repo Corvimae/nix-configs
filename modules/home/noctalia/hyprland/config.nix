@@ -73,6 +73,10 @@ in {
             key = "HYPRCURSOR_SIZE";
             value = "32";
           })
+          (mkEnv {
+            key = "XCURSOR_SIZE";
+            value = "32";
+          })
         ];
 
         animation = [

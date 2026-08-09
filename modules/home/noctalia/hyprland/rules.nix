@@ -8,6 +8,7 @@ let
     confine_pointer = true;
     immediate = true;
     render_unfocused = true;
+    idle_inhibit = "always";
   } // rules;
 in {
   config = lib.mkIf enable {

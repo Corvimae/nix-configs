@@ -33,7 +33,7 @@ hl.monitor({
   sdr_max_luminance = 80,
 })
 
-hl.workspace_rule({ workspace = "Fullscreen", monitor = "DP-2", })
+hl.workspace_rule({ workspace = "Fullscreen", monitor = "DP-2", layout = "monocle" })
 hl.workspace_rule({ workspace = "1", monitor = "DP-2", default = true, persistent = true, })
 hl.workspace_rule({ workspace = "2", monitor = "DP-2", })
 hl.workspace_rule({ workspace = "3", monitor = "DP-2", })
