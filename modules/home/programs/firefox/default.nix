@@ -25,6 +25,7 @@ in {
               { value = indie-wiki-buddy; }
               { value = youtube-suite-search-fixer; }
               { value = istilldontcareaboutcookies; }
+              { value = styl-us; }
               {
                 value = react-devtools;
                 enabled = developer;

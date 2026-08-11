@@ -12,5 +12,9 @@
     programs.firefox.profiles.may.extensions.packages = lib.mkAfter [
       pkgs.firefoxAddons.cookie-editor
     ];
+
+    programs.vscodium.profiles.default.extensions = with pkgs.nix-vscode-extensions.open-vsx; [
+      biomejs.biome
+    ];
   };
 }

@@ -141,7 +141,12 @@ programs = [
 ]
 
 packages = [
-  "gh"
+  "gh",
+  "secretspec",
+  "nodejs",
+  "corepack",
+  "biome",
+  "yalc"
 ]
 
 [hosts.duosion] # personal cachyos desktop
