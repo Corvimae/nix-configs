@@ -95,6 +95,13 @@ in {
             y = 0.4;
           };
         })
+        (mkCenterFloatRule {
+          match.class = "hyprland-share-picker";
+          pctSize = {
+            x = 0.4;
+            y = 0.4;
+          };
+        })
         # (mkCenterFloatRule {
         #   match.class = ""
         # })
