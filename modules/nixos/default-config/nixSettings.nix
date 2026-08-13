@@ -6,9 +6,7 @@
     config.allowUnfree = true;
 
     # attempt to remove this when whatever is still using 40.10.5 updates
-    config.permittedInsecurePackages = [
-      "electron-40.10.5"
-    ];
+    config.permittedInsecurePackages = [];
   };
 
   nix.optimise.automatic = true;

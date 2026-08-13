@@ -13,6 +13,8 @@
   home-manager.users.may-darwin = {
     programs.zsh = {
       shellAliases = {
+        nix-upgrade = "cd ~/Projects/nix-configs && nix flake update --extra-experimental-features \"nix-command flakes\"";
+        
         # doctl shortcuts
         ff-context = "kubectl config use-context do-nyc1-ff-k8s";
         maybreak-context = "kubectl config use-context do-nyc1-maybreak-k8s";

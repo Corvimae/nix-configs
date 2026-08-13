@@ -23,7 +23,7 @@ in {
               { value = bitwarden-password-manager; }
               { value = xkit-rewritten; }
               { value = indie-wiki-buddy; }
-              { value = youtube-suite-search-fixer; }
+              # { value = youtube-suite-search-fixer; }
               { value = istilldontcareaboutcookies; }
               { value = styl-us; }
               {
