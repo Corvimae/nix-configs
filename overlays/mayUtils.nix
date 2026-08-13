@@ -170,6 +170,10 @@ final: prev: {
           type = lib.types.str;
           description = "The wallpaper to use.";
         };
+        primaryMonitor = lib.mkOption {
+          type = lib.types.str;
+          description = "The monitor to use for full-screen takeover applications.";
+        };
       };
      } // (buildOptionsFromToml configFile);
 

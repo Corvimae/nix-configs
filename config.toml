@@ -170,6 +170,7 @@ packages = [
 [hosts.duosion.desktop]
 launcherIcon = "org.cachyos.hello"
 wallpaper = "duosion"
+primaryMonitor = "DP-2"
 
 [hosts.tinkaton] # aur build server
 class = "nixos"

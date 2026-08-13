@@ -9,6 +9,7 @@ let
     immediate = true;
     render_unfocused = true;
     idle_inhibit = "always";
+    monitor = config.may.desktop.primaryMonitor or null;
   } // rules;
 in {
   config = lib.mkIf enable {
