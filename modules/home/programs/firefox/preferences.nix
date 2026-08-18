@@ -119,6 +119,7 @@
   "browser.ml.linkPreview.enabled" = false;
   "browser.ml.chat.enabled" = false;
   "browser.ml.chat.menu" = false;
+  "extensions.ml.enabled" = false;
 
   # annoying stuff (other) begone
   "permissions.default.desktop-notification" = 2; # block web notifications
