@@ -42,6 +42,7 @@ in {
           enabled = true;
           icon_size = 32;
           launcher_position = "start";
+          launcher_custom_image = "${pkgs.may.font-logos}/${config.may.desktop.launcherIcon}.svg";
           show_dots = true;
           show_instance_count = false;
           main_axis_padding = 10;

@@ -95,8 +95,9 @@ packages = [
 ]
 
 [hosts.magnezone.desktop]
-launcherIcon = "nix-snowflake"
+launcherIcon = "nixos"
 wallpaper = "magnezone"
+primaryMonitor = "DP-1"
 
 [hosts.Archen] # personal macbook pro
 class = "darwin"
@@ -168,7 +169,7 @@ packages = [
 ]
 
 [hosts.duosion.desktop]
-launcherIcon = "org.cachyos.hello"
+launcherIcon = "cachyos"
 wallpaper = "duosion"
 primaryMonitor = "DP-2"
 
