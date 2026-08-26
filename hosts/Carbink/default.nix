@@ -14,7 +14,7 @@
     ];
 
     programs.vscodium.profiles.default.extensions = with pkgs.nix-vscode-extensions.open-vsx; [
-      biomejs.biome
+      
     ];
   };
 }

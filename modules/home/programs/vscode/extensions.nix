@@ -23,5 +23,6 @@ let
     # linters
     prisma.prisma
     dbaeumer.vscode-eslint
+    biomejs.biome
   ];
 in marketplaceExtensions ++ openVsxExtensions
