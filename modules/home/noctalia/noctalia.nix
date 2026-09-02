@@ -50,14 +50,14 @@ in {
           item_spacing = 4;
           magnification = false;
           pinned = [
-            "thunderbird"
+            "org.mozilla.Thunderbird"
             "firefox"
-            "dolphin"
+            "org.kde.dolphin"
             "vesktop"
             "slack"
             "codium"
             "steam"
-            "ghostty"
+            "com.mitchellh.ghostty"
           ];
         };
 
