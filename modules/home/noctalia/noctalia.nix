@@ -67,6 +67,7 @@ in {
 
         shell = {
           font_family = "Overpass";
+          launch_apps_as_systemd_services = true;
           
           launcher = {
             categories = false;
