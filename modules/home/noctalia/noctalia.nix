@@ -74,6 +74,10 @@ in {
               global = true;
             };
           };
+          
+          window_switcher = {
+            mru = true;
+          };
         };
 
         bar.default = {
