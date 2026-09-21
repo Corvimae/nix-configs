@@ -9,6 +9,12 @@
   may = pkgs.mayUtils.loadConfig "Carbink" ../../config.toml;
 
   home-manager.users.may-darwin = {
+    programs.zsh = {
+      shellAliases = {
+        nix-upgrade = "cd ~/Projects/nix-configs && nix flake update --extra-experimental-features \"nix-command flakes\"";
+      };    
+    };
+    
     programs.firefox.profiles.may.extensions.packages = lib.mkAfter [
       pkgs.firefoxAddons.cookie-editor
     ];
