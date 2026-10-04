@@ -40,6 +40,7 @@ programs = [
 ]
 
 packages = [
+  "net-news-wire",
   "slack"
 ]
 
