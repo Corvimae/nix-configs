@@ -32,4 +32,6 @@
     "https://developer.microsoft.com/json-schemas/" = true;
     "https://biomejs.dev" = true;
   };
+
+  "diffEditor.ignoreTrimWhitespace" = false;
 }

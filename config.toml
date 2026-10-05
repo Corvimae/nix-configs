@@ -50,6 +50,7 @@ packages = ["asdf-vm"]
 
 [features.gaming]
 programs = [
+  "obs",
   "steam",
   "vesktop"
 ]
