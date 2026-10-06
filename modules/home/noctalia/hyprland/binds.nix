@@ -190,13 +190,13 @@ in {
       }
       {
         key = "ALT + Tab";
-        cmd = "window-switcher";
+        cmd = "window-switcher hold";
         noModKey = true;
         type = "noctalia";
       }
       {
         key = "ALT + SHIFT + Tab";
-        cmd = "window-switcher";
+        cmd = "window-switcher hold";
         noModKey = true;
         type = "noctalia";
       }

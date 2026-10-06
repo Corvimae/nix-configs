@@ -17,7 +17,6 @@ in {
       }
       inputs.self.homeModules.programs
       inputs.self.homeModules.services
-      inputs.noctalia.homeModules.default
       inputs.self.homeModules.noctalia
       # inputs.self.homeModules.xdg
       ./pipewire.nix

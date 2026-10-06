@@ -9,11 +9,11 @@
     ./firefox
     ./ghostty
     ./iterm
-    ./obs
     ./omniwm
     ./vscode
     ./git.nix
     ./misc.nix
+    ./obs.nix
     ./vesktop.nix
     ./zsh.nix
   ];
