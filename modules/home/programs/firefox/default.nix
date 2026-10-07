@@ -10,7 +10,7 @@ in {
       inherit (cfg) enable;
       
       configPath = if config.may.class == "darwin"
-        then "${config.home.homeDirectory}/Library/Application Support/Firefox/"
+        then "${config.home.homeDirectory}/Library/Application Support/org.nixos.firefox"
         else "${config.xdg.configHome}/mozilla/firefox";
 
       profiles.may = {
