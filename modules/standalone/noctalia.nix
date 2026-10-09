@@ -2,7 +2,7 @@
 
 let
   enable = pkgs.mayUtils.isDesktopShell "noctalia" config;
-  main_monitor = "DP-2";
+  main_monitor = config.may.desktop.primaryMonitor or null;
 in {
   config = lib.mkIf enable {
     home.packages = [
@@ -10,7 +10,13 @@ in {
     ];
 
     programs.noctalia.settings = {
-      dock.monitors = [ main_monitor ];
+      # dock.monitor = {
+      #   "${main_monitor}" = {
+      #     enabled = true;
+      #   };
+      # };
+
+      dock.monitors = [ main_monitor ]; # this will break next noctalia version
       notification.monitors = [ main_monitor ];
       osd.monitors = [ main_monitor ];
       widget.battery.enabled = false;

@@ -115,11 +115,11 @@ in {
           volume.show_label = false;
           network.show_label = false;
           clock.format = "%l:%M %P";
-          cpu.display = "text";
-          ram.display = "text";
+          cpu.visualization = "gauge";
+          ram.visualization = "gauge";
           sysmon = {
-            display = "text";
-            stat = "disk_pct";
+            visualization = "gauge";
+            stat = "disk_used_pct";
           };
         };
 
