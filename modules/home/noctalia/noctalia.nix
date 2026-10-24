@@ -79,6 +79,8 @@ in {
           window_switcher = {
             mru = true;
           };
+
+          polkit_agent = true;
         };
 
         bar.default = {

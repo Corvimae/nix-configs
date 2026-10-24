@@ -167,7 +167,8 @@ features = [
 programs = []
 services = []
 packages = [
-  "bitwarden-cli"
+  "bitwarden-cli",
+  "yt-dlp"
 ]
 
 [hosts.duosion.desktop]
