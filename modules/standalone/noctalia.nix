@@ -28,7 +28,7 @@ in {
 
         env = with pkgs.hyprUtils; [
           (mkEnv { key = "GDK_SCALE"; value = "2"; })
-        ];
+        ]; 
       };
 
       extraLuaFiles = {
