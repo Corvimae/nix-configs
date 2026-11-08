@@ -35,6 +35,7 @@ services = [
 [features.desktop-darwin]
 programs = [
   "firefox",
+  "obsidian",
   "vesktop",
   "vscode",
 ]

@@ -14,6 +14,7 @@
     ./git.nix
     ./misc.nix
     ./obs.nix
+    ./obsidian.nix
     ./vesktop.nix
     ./zsh.nix
   ];

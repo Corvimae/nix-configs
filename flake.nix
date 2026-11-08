@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-obsidian-extensions = {
+      url = "github:karaolidis/nix-obsidian-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,6 +87,7 @@
       flake.allOverlays = [
         inputs.nix-firefox-addons.overlays.default
         inputs.nix-vscode-extensions.overlays.default
+        inputs.nix-obsidian-extensions.overlays.default
         # my packages
         (final: prev: { may = inputs.self.packages.${prev.system}; })
       ] ++ inputs.self.customOverlays;
