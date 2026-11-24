@@ -40,7 +40,7 @@ local function stop_at_workspaces(workspace_ids, neighbors, adjust)
       end
     end
 
-    if array_includes(workspace_ids, ws.id) or string.find(ws.config_name, "name:") then return end
+    if array_includes(workspace_ids, ws.id) or string.find(ws.config_name or "", "name:") then return end
 
     hl.dispatch(hl.dsp.focus({ workspace = adjust }))
   end
